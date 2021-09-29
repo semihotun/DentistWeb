@@ -1,0 +1,17 @@
+C:\Users\Semih\source\repos\DentistWeb\Business\bin\Debug\netstandard2.1\Business.deps.json
+C:\Users\Semih\source\repos\DentistWeb\Business\bin\Debug\netstandard2.1\Business.dll
+C:\Users\Semih\source\repos\DentistWeb\Business\bin\Debug\netstandard2.1\Business.pdb
+C:\Users\Semih\source\repos\DentistWeb\Business\bin\Debug\netstandard2.1\Core.dll
+C:\Users\Semih\source\repos\DentistWeb\Business\bin\Debug\netstandard2.1\DataAccess.dll
+C:\Users\Semih\source\repos\DentistWeb\Business\bin\Debug\netstandard2.1\Entities.dll
+C:\Users\Semih\source\repos\DentistWeb\Business\bin\Debug\netstandard2.1\DataAccess.pdb
+C:\Users\Semih\source\repos\DentistWeb\Business\bin\Debug\netstandard2.1\Entities.pdb
+C:\Users\Semih\source\repos\DentistWeb\Business\bin\Debug\netstandard2.1\Core.pdb
+C:\Users\Semih\source\repos\DentistWeb\Business\obj\Debug\netstandard2.1\Business.csprojAssemblyReference.cache
+C:\Users\Semih\source\repos\DentistWeb\Business\obj\Debug\netstandard2.1\Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Semih\source\repos\DentistWeb\Business\obj\Debug\netstandard2.1\Business.AssemblyInfoInputs.cache
+C:\Users\Semih\source\repos\DentistWeb\Business\obj\Debug\netstandard2.1\Business.AssemblyInfo.cs
+C:\Users\Semih\source\repos\DentistWeb\Business\obj\Debug\netstandard2.1\Business.csproj.CoreCompileInputs.cache
+C:\Users\Semih\source\repos\DentistWeb\Business\obj\Debug\netstandard2.1\Business.csproj.CopyComplete
+C:\Users\Semih\source\repos\DentistWeb\Business\obj\Debug\netstandard2.1\Business.dll
+C:\Users\Semih\source\repos\DentistWeb\Business\obj\Debug\netstandard2.1\Business.pdb

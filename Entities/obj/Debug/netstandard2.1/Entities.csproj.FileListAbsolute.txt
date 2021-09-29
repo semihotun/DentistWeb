@@ -1,0 +1,13 @@
+C:\Users\Semih\source\repos\DentistWeb\Entities\bin\Debug\netstandard2.1\Entities.deps.json
+C:\Users\Semih\source\repos\DentistWeb\Entities\bin\Debug\netstandard2.1\Entities.dll
+C:\Users\Semih\source\repos\DentistWeb\Entities\bin\Debug\netstandard2.1\Entities.pdb
+C:\Users\Semih\source\repos\DentistWeb\Entities\bin\Debug\netstandard2.1\Core.dll
+C:\Users\Semih\source\repos\DentistWeb\Entities\bin\Debug\netstandard2.1\Core.pdb
+C:\Users\Semih\source\repos\DentistWeb\Entities\obj\Debug\netstandard2.1\Entities.csprojAssemblyReference.cache
+C:\Users\Semih\source\repos\DentistWeb\Entities\obj\Debug\netstandard2.1\Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Semih\source\repos\DentistWeb\Entities\obj\Debug\netstandard2.1\Entities.AssemblyInfoInputs.cache
+C:\Users\Semih\source\repos\DentistWeb\Entities\obj\Debug\netstandard2.1\Entities.AssemblyInfo.cs
+C:\Users\Semih\source\repos\DentistWeb\Entities\obj\Debug\netstandard2.1\Entities.csproj.CoreCompileInputs.cache
+C:\Users\Semih\source\repos\DentistWeb\Entities\obj\Debug\netstandard2.1\Entities.csproj.CopyComplete
+C:\Users\Semih\source\repos\DentistWeb\Entities\obj\Debug\netstandard2.1\Entities.dll
+C:\Users\Semih\source\repos\DentistWeb\Entities\obj\Debug\netstandard2.1\Entities.pdb
