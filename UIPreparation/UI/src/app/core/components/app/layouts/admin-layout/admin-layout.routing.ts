@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { DoctorTypeComponent } from 'app/core/components/admin/doctorType/doctorType.component';
 import { GroupComponent } from 'app/core/components/admin/group/group.component';
 import { LanguageComponent } from 'app/core/components/admin/language/language.component';
 import { LogDtoComponent } from 'app/core/components/admin/log/logDto.component';
@@ -22,6 +23,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'language',       component: LanguageComponent,canActivate:[LoginGuard]},
     { path: 'translate',      component: TranslateComponent,canActivate:[LoginGuard]},
     { path: 'operationclaim', component: OperationClaimComponent,canActivate:[LoginGuard]},
-    { path: 'log',            component: LogDtoComponent,canActivate:[LoginGuard]}
+    { path: 'log',            component: LogDtoComponent,canActivate:[LoginGuard]},
+    { path: 'doctorType',     component: DoctorTypeComponent,canActivate:[LoginGuard]},
     
 ];

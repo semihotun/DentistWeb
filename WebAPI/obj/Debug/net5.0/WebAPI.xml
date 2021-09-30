@@ -211,6 +211,48 @@
              <param name="data"></param>
              <returns></returns>
         </member>
+        <member name="T:WebAPI.Controllers.DoctorTypesController">
+            <summary>
+            DoctorTypes If controller methods will not be Authorize, [AllowAnonymous] is used.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.DoctorTypesController.GetList">
+            <summary>
+            List DoctorTypes
+            </summary>
+            <remarks>DoctorTypes</remarks>
+            <return>List DoctorTypes</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.DoctorTypesController.GetById(System.Int32)">
+            <summary>
+            It brings the details according to its id.
+            </summary>
+            <remarks>DoctorTypes</remarks>
+            <return>DoctorTypes List</return>
+            <response code="200"></response>  
+        </member>
+        <member name="M:WebAPI.Controllers.DoctorTypesController.Add(Business.Handlers.DoctorTypes.Commands.CreateDoctorTypeCommand)">
+            <summary>
+            Add DoctorType.
+            </summary>
+            <param name="createDoctorType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.DoctorTypesController.Update(Business.Handlers.DoctorTypes.Commands.UpdateDoctorTypeCommand)">
+            <summary>
+            Update DoctorType.
+            </summary>
+            <param name="updateDoctorType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.DoctorTypesController.Delete(Business.Handlers.DoctorTypes.Commands.DeleteDoctorTypeCommand)">
+            <summary>
+            Delete DoctorType.
+            </summary>
+            <param name="deleteDoctorType"></param>
+            <returns></returns>
+        </member>
         <member name="T:WebAPI.Controllers.GroupClaimsController">
              <summary>
             
