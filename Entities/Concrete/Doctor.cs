@@ -12,7 +12,6 @@ namespace Entities.Concrete
         public string Surname { get; set; }
         public string Adress { get; set; }
         public int Telephone { get; set; }
-        public int DegreeId { get; set; }
         public int DoctorTypeId { get; set; }
         public DateTime StartDateOfWork { get; set; }
         public bool Active { get; set; }
