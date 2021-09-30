@@ -8,6 +8,99 @@ namespace DataAccess.Migrations.Ms
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Appointment",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Day = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Hour = table.Column<int>(type: "int", nullable: false),
+                    Minutes = table.Column<int>(type: "int", nullable: false),
+                    PatientId = table.Column<int>(type: "int", nullable: false),
+                    DoctorId = table.Column<int>(type: "int", nullable: false),
+                    DiseaseId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Appointment", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AppointmentTime",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Hour = table.Column<int>(type: "int", nullable: false),
+                    Minutes = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AppointmentTime", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Degree",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Degree", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Disease",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<int>(type: "int", nullable: false),
+                    Amount = table.Column<double>(type: "float", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Disease", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Doctor",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Surname = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Adress = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Telephone = table.Column<int>(type: "int", nullable: false),
+                    DegreeId = table.Column<int>(type: "int", nullable: false),
+                    DoctorTypeId = table.Column<int>(type: "int", nullable: false),
+                    StartDateOfWork = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Active = table.Column<bool>(type: "bit", nullable: false),
+                    Deleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Doctor", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "DoctorType",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DoctorType", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "GroupClaims",
                 columns: table => new
                 {
@@ -93,6 +186,37 @@ namespace DataAccess.Migrations.Ms
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_OperationClaims", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Patient",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    IdentificationNumber = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Surname = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Adress = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Telephone = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Patient", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "PatientOperation",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PatientId = table.Column<int>(type: "int", nullable: false),
+                    DiseaseId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PatientOperation", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -353,6 +477,24 @@ namespace DataAccess.Migrations.Ms
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "Appointment");
+
+            migrationBuilder.DropTable(
+                name: "AppointmentTime");
+
+            migrationBuilder.DropTable(
+                name: "Degree");
+
+            migrationBuilder.DropTable(
+                name: "Disease");
+
+            migrationBuilder.DropTable(
+                name: "Doctor");
+
+            migrationBuilder.DropTable(
+                name: "DoctorType");
+
+            migrationBuilder.DropTable(
                 name: "GroupClaims");
 
             migrationBuilder.DropTable(
@@ -369,6 +511,12 @@ namespace DataAccess.Migrations.Ms
 
             migrationBuilder.DropTable(
                 name: "OperationClaims");
+
+            migrationBuilder.DropTable(
+                name: "Patient");
+
+            migrationBuilder.DropTable(
+                name: "PatientOperation");
 
             migrationBuilder.DropTable(
                 name: "Translates");

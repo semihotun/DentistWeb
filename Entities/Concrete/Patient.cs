@@ -5,17 +5,13 @@ using System.Text;
 
 namespace Entities.Concrete
 {
-    public class Doctor : IEntity
+    public class Patient :IEntity
     {
         public int Id { get; set; }
+        public int IdentificationNumber { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Adress { get; set; }
         public int Telephone { get; set; }
-        public int DegreeId { get; set; }
-        public int DoctorTypeId { get; set; }
-        public DateTime StartDateOfWork { get; set; }
-        public bool Active { get; set; }
-        public bool Deleted { get; set; }
-    } 
+    }
 }

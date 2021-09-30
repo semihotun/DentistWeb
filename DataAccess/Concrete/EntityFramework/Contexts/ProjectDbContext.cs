@@ -1,4 +1,5 @@
 using Core.Entities.Concrete;
+using Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.Reflection;
@@ -45,8 +46,16 @@ namespace DataAccess.Concrete.EntityFramework.Contexts
         public DbSet<MobileLogin> MobileLogins { get; set; }
         public DbSet<Language> Languages { get; set; }
         public DbSet<Translate> Translates { get; set; }
-
         protected IConfiguration Configuration { get; }
+
+        public DbSet<Appointment> Appointment { get; set; }
+        public DbSet<AppointmentTime> AppointmentTime { get; set; }
+        public DbSet<Degree> Degree { get; set; }
+        public DbSet<Disease> Disease { get; set; }
+        public DbSet<Doctor> Doctor { get; set; }
+        public DbSet<DoctorType> DoctorType { get; set; }
+        public DbSet<Patient> Patient { get; set; }
+        public DbSet<PatientOperation> PatientOperation { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
