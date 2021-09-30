@@ -28,7 +28,7 @@ namespace Business.Handlers.Translates.Commands
 
             [SecuredOperation(Priority = 1)]
             [CacheRemoveAspect("Get")]
-            [LogAspect(typeof(FileLogger))]
+            [LogAspect(typeof(MsSqlLogger))]
             public async Task<IResult> Handle(DeleteTranslateCommand request, CancellationToken cancellationToken)
             {
                 var translateToDelete = _translateRepository.Get(p => p.Id == request.Id);

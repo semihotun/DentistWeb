@@ -28,7 +28,7 @@ namespace Business.Handlers.UserGroups.Queries
 
             [SecuredOperation(Priority = 1)]
             [CacheAspect(10)]
-            [LogAspect(typeof(FileLogger))]
+            [LogAspect(typeof(MsSqlLogger))]
             public async Task<IDataResult<IEnumerable<SelectionItem>>> Handle(GetUserGroupLookupByUserIdQuery request, CancellationToken cancellationToken)
             {
                 var data = await _groupClaimRepository.GetUserGroupSelectedList(request.UserId);

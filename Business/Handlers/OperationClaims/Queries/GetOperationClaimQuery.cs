@@ -23,7 +23,7 @@ namespace Business.Handlers.OperationClaims.Queries
             }
 
             [SecuredOperation(Priority = 1)]
-            [LogAspect(typeof(FileLogger))]
+            [LogAspect(typeof(MsSqlLogger))]
             public async Task<IDataResult<OperationClaim>> Handle(GetOperationClaimQuery request, CancellationToken cancellationToken)
             {
                 return new SuccessDataResult<OperationClaim>(await _operationClaimRepository.GetAsync(x => x.Id == request.Id));

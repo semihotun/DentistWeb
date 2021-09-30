@@ -26,7 +26,7 @@ namespace Business.Handlers.UserGroups.Commands
 
             [SecuredOperation(Priority = 1)]
             [CacheRemoveAspect("Get")]
-            [LogAspect(typeof(FileLogger))]
+            [LogAspect(typeof(MsSqlLogger))]
             public async Task<IResult> Handle(DeleteUserGroupCommand request, CancellationToken cancellationToken)
             {
                 var entityToDelete = await _userGroupRepository.GetAsync(x => x.UserId == request.Id);

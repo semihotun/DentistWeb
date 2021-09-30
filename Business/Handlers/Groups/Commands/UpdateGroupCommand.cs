@@ -28,7 +28,7 @@ namespace Business.Handlers.Groups.Commands
 
             [SecuredOperation(Priority = 1)]
             [CacheRemoveAspect("Get")]
-            [LogAspect(typeof(FileLogger))]
+            [LogAspect(typeof(MsSqlLogger))]
             public async Task<IResult> Handle(UpdateGroupCommand request, CancellationToken cancellationToken)
             {
                 var groupToUpdate = new Group

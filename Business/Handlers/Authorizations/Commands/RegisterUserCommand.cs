@@ -36,7 +36,7 @@ namespace Business.Handlers.Authorizations.Commands
             [SecuredOperation(Priority = 1)]
             [ValidationAspect(typeof(RegisterUserValidator), Priority = 2)]
             [CacheRemoveAspect("Get")]
-            [LogAspect(typeof(FileLogger))]
+            [LogAspect(typeof(MsSqlLogger))]
             public async Task<IResult> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
             {
                 var isThereAnyUser = await _userRepository.GetAsync(u => u.Email == request.Email);

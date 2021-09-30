@@ -34,7 +34,7 @@ namespace Business.Handlers.Translates.Commands
             [SecuredOperation(Priority = 1)]
             [ValidationAspect(typeof(CreateTranslateValidator), Priority = 2)]
             [CacheRemoveAspect("Get")]
-            [LogAspect(typeof(FileLogger))]
+            [LogAspect(typeof(MsSqlLogger))]
             public async Task<IResult> Handle(UpdateTranslateCommand request, CancellationToken cancellationToken)
             {
                 var isThereTranslateRecord = await _translateRepository.GetAsync(u => u.Id == request.Id);

@@ -27,7 +27,7 @@ namespace Business.Handlers.GroupClaims.Commands
 
             [SecuredOperation(Priority = 1)]
             [CacheRemoveAspect("Get")]
-            [LogAspect(typeof(FileLogger))]
+            [LogAspect(typeof(MsSqlLogger))]
             public async Task<IResult> Handle(CreateGroupClaimCommand request, CancellationToken cancellationToken)
             {
 

@@ -29,7 +29,7 @@ namespace Business.Handlers.Translates.Queries
             [SecuredOperation(Priority = 1)]
             [PerformanceAspect(5)]
             [CacheAspect(10)]
-            [LogAspect(typeof(FileLogger))]
+            [LogAspect(typeof(MsSqlLogger))]
             public async Task<IDataResult<Dictionary<string, string>>> Handle(GetTranslateWordListQuery request, CancellationToken cancellationToken)
             {
                 return new SuccessDataResult<Dictionary<string, string>>(await _translateRepository.GetTranslateWordList(request.Lang));

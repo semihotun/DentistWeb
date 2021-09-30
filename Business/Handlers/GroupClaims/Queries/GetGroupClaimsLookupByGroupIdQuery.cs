@@ -24,7 +24,7 @@ namespace Business.Handlers.GroupClaims.Queries
             }
 
             [SecuredOperation(Priority = 1)]
-            [LogAspect(typeof(FileLogger))]
+            [LogAspect(typeof(MsSqlLogger))]
             public async Task<IDataResult<IEnumerable<SelectionItem>>> Handle(GetGroupClaimsLookupByGroupIdQuery request, CancellationToken cancellationToken)
             {
                 var data = await _groupClaimRepository.GetGroupClaimsSelectedList(request.GroupId);
