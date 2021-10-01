@@ -24,7 +24,9 @@ export const ADMINROUTES: RouteInfo[] = [
 
 export const USERROUTES: RouteInfo[] = [ 
   { path: '/doctorType', title: 'DoctorType', icon: 'update', class: '', claim: "GetDoctorTypesQuery" },
-  //{ path: '/log', title: 'Logs', icon: 'update', class: '', claim: "GetLogDtoQuery" }
+  { path: '/currency', title: 'Currency', icon: 'update', class: '', claim: "GetCurrenciesQuery" },
+  { path: '/appointmentTime', title: 'AppointmentTime', icon: 'update', class: '', claim: "GetAppointmentTimesQuery" },
+  { path: '/patient', title: 'Patient', icon: 'update', class: '', claim: "GetPatientsQuery" },
 ];
 
 @Component({

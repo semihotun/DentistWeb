@@ -4,6 +4,48 @@
         <name>WebAPI</name>
     </assembly>
     <members>
+        <member name="T:WebAPI.Controllers.AppointmentTimesController">
+            <summary>
+            AppointmentTimes If controller methods will not be Authorize, [AllowAnonymous] is used.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.AppointmentTimesController.GetList">
+            <summary>
+            List AppointmentTimes
+            </summary>
+            <remarks>AppointmentTimes</remarks>
+            <return>List AppointmentTimes</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.AppointmentTimesController.GetById(System.Int32)">
+            <summary>
+            It brings the details according to its id.
+            </summary>
+            <remarks>AppointmentTimes</remarks>
+            <return>AppointmentTimes List</return>
+            <response code="200"></response>  
+        </member>
+        <member name="M:WebAPI.Controllers.AppointmentTimesController.Add(Business.Handlers.AppointmentTimes.Commands.CreateAppointmentTimeCommand)">
+            <summary>
+            Add AppointmentTime.
+            </summary>
+            <param name="createAppointmentTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.AppointmentTimesController.Update(Business.Handlers.AppointmentTimes.Commands.UpdateAppointmentTimeCommand)">
+            <summary>
+            Update AppointmentTime.
+            </summary>
+            <param name="updateAppointmentTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.AppointmentTimesController.Delete(Business.Handlers.AppointmentTimes.Commands.DeleteAppointmentTimeCommand)">
+            <summary>
+            Delete AppointmentTime.
+            </summary>
+            <param name="deleteAppointmentTime"></param>
+            <returns></returns>
+        </member>
         <member name="T:WebAPI.Controllers.AuthController">
             <summary>
             Make it Authorization operations
@@ -210,6 +252,90 @@
              <typeparam name="T"></typeparam>
              <param name="data"></param>
              <returns></returns>
+        </member>
+        <member name="T:WebAPI.Controllers.CurrenciesController">
+            <summary>
+            Currencies If controller methods will not be Authorize, [AllowAnonymous] is used.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.CurrenciesController.GetList">
+            <summary>
+            List Currencies
+            </summary>
+            <remarks>Currencies</remarks>
+            <return>List Currencies</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.CurrenciesController.GetById(System.Int32)">
+            <summary>
+            It brings the details according to its id.
+            </summary>
+            <remarks>Currencies</remarks>
+            <return>Currencies List</return>
+            <response code="200"></response>  
+        </member>
+        <member name="M:WebAPI.Controllers.CurrenciesController.Add(Business.Handlers.Currencies.Commands.CreateCurrencyCommand)">
+            <summary>
+            Add Currency.
+            </summary>
+            <param name="createCurrency"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.CurrenciesController.Update(Business.Handlers.Currencies.Commands.UpdateCurrencyCommand)">
+            <summary>
+            Update Currency.
+            </summary>
+            <param name="updateCurrency"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.CurrenciesController.Delete(Business.Handlers.Currencies.Commands.DeleteCurrencyCommand)">
+            <summary>
+            Delete Currency.
+            </summary>
+            <param name="deleteCurrency"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebAPI.Controllers.DoctorTypesController">
+            <summary>
+            DoctorTypes If controller methods will not be Authorize, [AllowAnonymous] is used.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.DoctorTypesController.GetList">
+            <summary>
+            List DoctorTypes
+            </summary>
+            <remarks>DoctorTypes</remarks>
+            <return>List DoctorTypes</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.DoctorTypesController.GetById(System.Int32)">
+            <summary>
+            It brings the details according to its id.
+            </summary>
+            <remarks>DoctorTypes</remarks>
+            <return>DoctorTypes List</return>
+            <response code="200"></response>  
+        </member>
+        <member name="M:WebAPI.Controllers.DoctorTypesController.Add(Business.Handlers.DoctorTypes.Commands.CreateDoctorTypeCommand)">
+            <summary>
+            Add DoctorType.
+            </summary>
+            <param name="createDoctorType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.DoctorTypesController.Update(Business.Handlers.DoctorTypes.Commands.UpdateDoctorTypeCommand)">
+            <summary>
+            Update DoctorType.
+            </summary>
+            <param name="updateDoctorType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.DoctorTypesController.Delete(Business.Handlers.DoctorTypes.Commands.DeleteDoctorTypeCommand)">
+            <summary>
+            Delete DoctorType.
+            </summary>
+            <param name="deleteDoctorType"></param>
+            <returns></returns>
         </member>
         <member name="T:WebAPI.Controllers.GroupClaimsController">
              <summary>
@@ -428,6 +554,48 @@
             <remarks>bla bla bla OperationClaims</remarks>
             <return>OperationClaims List</return>
             <response code="200"></response>
+        </member>
+        <member name="T:WebAPI.Controllers.PatientsController">
+            <summary>
+            Patients If controller methods will not be Authorize, [AllowAnonymous] is used.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.PatientsController.GetList">
+            <summary>
+            List Patients
+            </summary>
+            <remarks>Patients</remarks>
+            <return>List Patients</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.PatientsController.GetById(System.Int32)">
+            <summary>
+            It brings the details according to its id.
+            </summary>
+            <remarks>Patients</remarks>
+            <return>Patients List</return>
+            <response code="200"></response>  
+        </member>
+        <member name="M:WebAPI.Controllers.PatientsController.Add(Business.Handlers.Patients.Commands.CreatePatientCommand)">
+            <summary>
+            Add Patient.
+            </summary>
+            <param name="createPatient"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.PatientsController.Update(Business.Handlers.Patients.Commands.UpdatePatientCommand)">
+            <summary>
+            Update Patient.
+            </summary>
+            <param name="updatePatient"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.PatientsController.Delete(Business.Handlers.Patients.Commands.DeletePatientCommand)">
+            <summary>
+            Delete Patient.
+            </summary>
+            <param name="deletePatient"></param>
+            <returns></returns>
         </member>
         <member name="T:WebAPI.Controllers.TranslatesController">
             <summary>

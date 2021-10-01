@@ -29,6 +29,9 @@ import { LogDtoComponent } from '../components/admin/log/logDto.component';
 import { MatSortModule } from '@angular/material/sort';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { DoctorTypeComponent } from '../components/admin/doctorType/doctorType.component';
+import { AppointmentTimeComponent } from '../components/admin/appointmentTime/appointmentTime.component';
+import { CurrencyComponent } from '../components/admin/currency/currency.component';
+import { PatientComponent } from '../components/admin/patient/patient.component';
 
 
 // export function layoutHttpLoaderFactory(http: HttpClient) {
@@ -73,7 +76,11 @@ import { DoctorTypeComponent } from '../components/admin/doctorType/doctorType.c
         TranslateComponent,
         OperationClaimComponent,
         LogDtoComponent,
-        DoctorTypeComponent
+        DoctorTypeComponent,
+        AppointmentTimeComponent,
+        CurrencyComponent,
+        PatientComponent
+        
     ]
 })
 

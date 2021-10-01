@@ -9,6 +9,7 @@ namespace Entities.Concrete
     {
         public int Id { get; set; }
         public int Name { get; set; }
-        public double Amount { get; set; }
+        public double Price { get; set; }
+        public int CurrencyId { get; set; }
     }
 }

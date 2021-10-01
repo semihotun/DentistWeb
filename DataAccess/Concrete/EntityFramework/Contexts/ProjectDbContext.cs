@@ -47,16 +47,18 @@ namespace DataAccess.Concrete.EntityFramework.Contexts
         public DbSet<Language> Languages { get; set; }
         public DbSet<Translate> Translates { get; set; }
         protected IConfiguration Configuration { get; }
-
         public DbSet<Appointment> Appointment { get; set; }
         public DbSet<AppointmentTime> AppointmentTime { get; set; }
-        public DbSet<Degree> Degree { get; set; }
         public DbSet<Disease> Disease { get; set; }
+        public DbSet<Currency> Currency { get; set; }
         public DbSet<Doctor> Doctor { get; set; }
         public DbSet<DoctorType> DoctorType { get; set; }
         public DbSet<Patient> Patient { get; set; }
         public DbSet<PatientOperation> PatientOperation { get; set; }
         public DbSet<DoctorType> DoctorTypes { get; set; }
+        public DbSet<Currency> Currencies { get; set; }
+        public DbSet<Patient> Patients { get; set; }
+        public DbSet<AppointmentTime> AppointmentTimes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
