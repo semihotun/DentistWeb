@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { AppointmentTimeComponent } from 'app/core/components/admin/appointmentTime/appointmentTime.component';
 import { CurrencyComponent } from 'app/core/components/admin/currency/currency.component';
+import { DiseaseComponent } from 'app/core/components/admin/disease/disease.component';
 import { DoctorTypeComponent } from 'app/core/components/admin/doctorType/doctorType.component';
 import { GroupComponent } from 'app/core/components/admin/group/group.component';
 import { LanguageComponent } from 'app/core/components/admin/language/language.component';
@@ -31,5 +32,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'appointmentTime',     component: AppointmentTimeComponent,canActivate:[LoginGuard]},
     { path: 'currency',     component: CurrencyComponent,canActivate:[LoginGuard]},
     { path: 'patient',     component: PatientComponent,canActivate:[LoginGuard]},
+    { path: 'disease',     component: DiseaseComponent,canActivate:[LoginGuard]},
     
 ];

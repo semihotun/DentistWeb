@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Entities.Concrete;
 using System.Collections.Generic;
+using Core.Entities.Dtos;
 
 namespace WebAPI.Controllers
 {
@@ -17,6 +18,26 @@ namespace WebAPI.Controllers
     [ApiController]
     public class CurrenciesController : BaseApiController
     {
+        ///<summary>
+        ///Get Currencies Select List
+        ///</summary>
+        ///<remarks>Currencies</remarks>
+        ///<return>List Currencies Select Item</return>
+        ///<response code="200"></response>
+        [Produces("application/json", "text/plain")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<SelectionItem>))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
+        [HttpGet("getcurrencylookUp")]
+        public async Task<IActionResult> GetCurrencyLookUp()
+        {
+            var result = await Mediator.Send(new GetCurrencyLookUpQuery());
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+            return BadRequest(result.Message);
+        }
+
         ///<summary>
         ///List Currencies
         ///</summary>

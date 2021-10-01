@@ -32,6 +32,7 @@ import { DoctorTypeComponent } from '../components/admin/doctorType/doctorType.c
 import { AppointmentTimeComponent } from '../components/admin/appointmentTime/appointmentTime.component';
 import { CurrencyComponent } from '../components/admin/currency/currency.component';
 import { PatientComponent } from '../components/admin/patient/patient.component';
+import { DiseaseComponent } from '../components/admin/disease/disease.component';
 
 
 // export function layoutHttpLoaderFactory(http: HttpClient) {
@@ -79,7 +80,8 @@ import { PatientComponent } from '../components/admin/patient/patient.component'
         DoctorTypeComponent,
         AppointmentTimeComponent,
         CurrencyComponent,
-        PatientComponent
+        PatientComponent,
+        DiseaseComponent
         
     ]
 })

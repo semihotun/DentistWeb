@@ -27,7 +27,9 @@ export const USERROUTES: RouteInfo[] = [
   { path: '/currency', title: 'Currency', icon: 'update', class: '', claim: "GetCurrenciesQuery" },
   { path: '/appointmentTime', title: 'AppointmentTime', icon: 'update', class: '', claim: "GetAppointmentTimesQuery" },
   { path: '/patient', title: 'Patient', icon: 'update', class: '', claim: "GetPatientsQuery" },
+  { path: '/disease', title: 'Disease', icon: 'update', class: '', claim: "GetDiseasesQuery" },
 ];
+
 
 @Component({
   selector: 'app-sidebar',

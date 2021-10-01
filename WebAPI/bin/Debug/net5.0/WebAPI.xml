@@ -258,6 +258,14 @@
             Currencies If controller methods will not be Authorize, [AllowAnonymous] is used.
             </summary>
         </member>
+        <member name="M:WebAPI.Controllers.CurrenciesController.GetCurrencyLookUp">
+            <summary>
+            Get Currencies Select List
+            </summary>
+            <remarks>Currencies</remarks>
+            <return>List Currencies Select Item</return>
+            <response code="200"></response>
+        </member>
         <member name="M:WebAPI.Controllers.CurrenciesController.GetList">
             <summary>
             List Currencies
@@ -293,6 +301,48 @@
             Delete Currency.
             </summary>
             <param name="deleteCurrency"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebAPI.Controllers.DiseasesController">
+            <summary>
+            Diseases If controller methods will not be Authorize, [AllowAnonymous] is used.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.DiseasesController.GetList">
+            <summary>
+            List Diseases
+            </summary>
+            <remarks>Diseases</remarks>
+            <return>List Diseases</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.DiseasesController.GetById(System.Int32)">
+            <summary>
+            It brings the details according to its id.
+            </summary>
+            <remarks>Diseases</remarks>
+            <return>Diseases List</return>
+            <response code="200"></response>  
+        </member>
+        <member name="M:WebAPI.Controllers.DiseasesController.Add(Business.Handlers.Diseases.Commands.CreateDiseaseCommand)">
+            <summary>
+            Add Disease.
+            </summary>
+            <param name="createDisease"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.DiseasesController.Update(Business.Handlers.Diseases.Commands.UpdateDiseaseCommand)">
+            <summary>
+            Update Disease.
+            </summary>
+            <param name="updateDisease"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.DiseasesController.Delete(Business.Handlers.Diseases.Commands.DeleteDiseaseCommand)">
+            <summary>
+            Delete Disease.
+            </summary>
+            <param name="deleteDisease"></param>
             <returns></returns>
         </member>
         <member name="T:WebAPI.Controllers.DoctorTypesController">

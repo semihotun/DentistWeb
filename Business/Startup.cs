@@ -90,6 +90,7 @@ namespace Business
         public void ConfigureDevelopmentServices(IServiceCollection services)
         {
             ConfigureServices(services);
+            services.AddTransient<IDiseaseRepository, DiseaseRepository>();
             services.AddTransient<IAppointmentTimeRepository, AppointmentTimeRepository>();
             services.AddTransient<IPatientRepository, PatientRepository>();
             services.AddTransient<ICurrencyRepository, CurrencyRepository>();
@@ -117,6 +118,7 @@ namespace Business
         public void ConfigureStagingServices(IServiceCollection services)
         {
             ConfigureServices(services);
+            services.AddTransient<IDiseaseRepository, DiseaseRepository>();
             services.AddTransient<IAppointmentTimeRepository, AppointmentTimeRepository>();
             services.AddTransient<IPatientRepository, PatientRepository>();
             services.AddTransient<ICurrencyRepository, CurrencyRepository>();
@@ -143,6 +145,7 @@ namespace Business
         public void ConfigureProductionServices(IServiceCollection services)
         {
             ConfigureServices(services);
+            services.AddTransient<IDiseaseRepository, DiseaseRepository>();
             services.AddTransient<IAppointmentTimeRepository, AppointmentTimeRepository>();
             services.AddTransient<IPatientRepository, PatientRepository>();
             services.AddTransient<ICurrencyRepository, CurrencyRepository>();
