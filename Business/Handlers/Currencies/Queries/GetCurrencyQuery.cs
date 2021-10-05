@@ -26,7 +26,7 @@ namespace Business.Handlers.Currencies.Queries
                 _currencyRepository = currencyRepository;
                 _mediator = mediator;
             }
-            [LogAspect(typeof(FileLogger))]
+            [LogAspect(typeof(MsSqlLogger))]
             [SecuredOperation(Priority = 1)]
             public async Task<IDataResult<Currency>> Handle(GetCurrencyQuery request, CancellationToken cancellationToken)
             {

@@ -33,6 +33,9 @@ import { AppointmentTimeComponent } from '../components/admin/appointmentTime/ap
 import { CurrencyComponent } from '../components/admin/currency/currency.component';
 import { PatientComponent } from '../components/admin/patient/patient.component';
 import { DiseaseComponent } from '../components/admin/disease/disease.component';
+import { DoctorCreateComponent } from '../components/admin/doctor/components/Create/doctorCreate.component';
+import { DoctorUpdateComponent } from '../components/admin/doctor/components/Update/doctorUpdate.component';
+import { DoctorComponent } from '../components/admin/doctor/components/List/doctor.component';
 
 
 // export function layoutHttpLoaderFactory(http: HttpClient) {
@@ -81,7 +84,10 @@ import { DiseaseComponent } from '../components/admin/disease/disease.component'
         AppointmentTimeComponent,
         CurrencyComponent,
         PatientComponent,
-        DiseaseComponent
+        DiseaseComponent,
+        DoctorComponent,
+        DoctorCreateComponent,
+        DoctorUpdateComponent
         
     ]
 })

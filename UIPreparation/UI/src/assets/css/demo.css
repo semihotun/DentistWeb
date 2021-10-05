@@ -33,3 +33,6 @@
   position: absolute;
   width: 260px;
 }
+.adminTitlePadding{
+  padding: 0px 0px 30px 16px;
+}

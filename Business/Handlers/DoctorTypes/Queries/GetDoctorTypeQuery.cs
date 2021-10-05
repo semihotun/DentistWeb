@@ -26,7 +26,7 @@ namespace Business.Handlers.DoctorTypes.Queries
                 _doctorTypeRepository = doctorTypeRepository;
                 _mediator = mediator;
             }
-            [LogAspect(typeof(FileLogger))]
+            [LogAspect(typeof(MsSqlLogger))]
             [SecuredOperation(Priority = 1)]
             public async Task<IDataResult<DoctorType>> Handle(GetDoctorTypeQuery request, CancellationToken cancellationToken)
             {

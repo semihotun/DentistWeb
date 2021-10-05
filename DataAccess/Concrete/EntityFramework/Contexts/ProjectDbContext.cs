@@ -60,6 +60,7 @@ namespace DataAccess.Concrete.EntityFramework.Contexts
         public DbSet<Patient> Patients { get; set; }
         public DbSet<AppointmentTime> AppointmentTimes { get; set; }
         public DbSet<Disease> Diseases { get; set; }
+        public DbSet<Doctor> Doctors { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

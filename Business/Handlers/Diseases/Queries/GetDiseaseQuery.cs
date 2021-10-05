@@ -26,7 +26,7 @@ namespace Business.Handlers.Diseases.Queries
                 _diseaseRepository = diseaseRepository;
                 _mediator = mediator;
             }
-            [LogAspect(typeof(FileLogger))]
+            [LogAspect(typeof(MsSqlLogger))]
             [SecuredOperation(Priority = 1)]
             public async Task<IDataResult<Disease>> Handle(GetDiseaseQuery request, CancellationToken cancellationToken)
             {

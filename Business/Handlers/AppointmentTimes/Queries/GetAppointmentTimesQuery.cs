@@ -30,7 +30,7 @@ namespace Business.Handlers.AppointmentTimes.Queries
 
             [PerformanceAspect(5)]
             [CacheAspect(10)]
-            [LogAspect(typeof(FileLogger))]
+            [LogAspect(typeof(MsSqlLogger))]
             [SecuredOperation(Priority = 1)]
             public async Task<IDataResult<IEnumerable<AppointmentTime>>> Handle(GetAppointmentTimesQuery request, CancellationToken cancellationToken)
             {

@@ -32,7 +32,7 @@ namespace Business.Handlers.AppointmentTimes.Commands
             }
 
             [CacheRemoveAspect("Get")]
-            [LogAspect(typeof(FileLogger))]
+            [LogAspect(typeof(MsSqlLogger))]
             [SecuredOperation(Priority = 1)]
             public async Task<IResult> Handle(DeleteAppointmentTimeCommand request, CancellationToken cancellationToken)
             {

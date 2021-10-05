@@ -39,7 +39,7 @@ namespace Business.Handlers.Diseases.Commands
 
             [ValidationAspect(typeof(UpdateDiseaseValidator), Priority = 1)]
             [CacheRemoveAspect("Get")]
-            [LogAspect(typeof(FileLogger))]
+            [LogAspect(typeof(MsSqlLogger))]
             [SecuredOperation(Priority = 1)]
             public async Task<IResult> Handle(UpdateDiseaseCommand request, CancellationToken cancellationToken)
             {

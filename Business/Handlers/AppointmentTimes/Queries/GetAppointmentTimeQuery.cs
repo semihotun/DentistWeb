@@ -26,7 +26,7 @@ namespace Business.Handlers.AppointmentTimes.Queries
                 _appointmentTimeRepository = appointmentTimeRepository;
                 _mediator = mediator;
             }
-            [LogAspect(typeof(FileLogger))]
+            [LogAspect(typeof(MsSqlLogger))]
             [SecuredOperation(Priority = 1)]
             public async Task<IDataResult<AppointmentTime>> Handle(GetAppointmentTimeQuery request, CancellationToken cancellationToken)
             {

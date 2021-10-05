@@ -30,7 +30,7 @@ namespace Business.Handlers.DoctorTypes.Queries
 
             [PerformanceAspect(5)]
             [CacheAspect(10)]
-            [LogAspect(typeof(FileLogger))]
+            [LogAspect(typeof(MsSqlLogger))]
             [SecuredOperation(Priority = 1)]
             public async Task<IDataResult<IEnumerable<DoctorType>>> Handle(GetDoctorTypesQuery request, CancellationToken cancellationToken)
             {

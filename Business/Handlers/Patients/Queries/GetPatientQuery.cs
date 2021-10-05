@@ -26,7 +26,7 @@ namespace Business.Handlers.Patients.Queries
                 _patientRepository = patientRepository;
                 _mediator = mediator;
             }
-            [LogAspect(typeof(FileLogger))]
+           [LogAspect(typeof(MsSqlLogger))]
             [SecuredOperation(Priority = 1)]
             public async Task<IDataResult<Patient>> Handle(GetPatientQuery request, CancellationToken cancellationToken)
             {

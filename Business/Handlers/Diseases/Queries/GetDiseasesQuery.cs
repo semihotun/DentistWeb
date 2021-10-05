@@ -30,7 +30,7 @@ namespace Business.Handlers.Diseases.Queries
 
             [PerformanceAspect(5)]
             [CacheAspect(10)]
-            [LogAspect(typeof(FileLogger))]
+            [LogAspect(typeof(MsSqlLogger))]
             [SecuredOperation(Priority = 1)]
             public async Task<IDataResult<IEnumerable<Disease>>> Handle(GetDiseasesQuery request, CancellationToken cancellationToken)
             {

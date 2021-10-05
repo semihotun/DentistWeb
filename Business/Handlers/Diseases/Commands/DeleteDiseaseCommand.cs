@@ -32,7 +32,7 @@ namespace Business.Handlers.Diseases.Commands
             }
 
             [CacheRemoveAspect("Get")]
-            [LogAspect(typeof(FileLogger))]
+            [LogAspect(typeof(MsSqlLogger))]
             [SecuredOperation(Priority = 1)]
             public async Task<IResult> Handle(DeleteDiseaseCommand request, CancellationToken cancellationToken)
             {

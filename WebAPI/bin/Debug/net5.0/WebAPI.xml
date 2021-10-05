@@ -345,10 +345,60 @@
             <param name="deleteDisease"></param>
             <returns></returns>
         </member>
+        <member name="T:WebAPI.Controllers.DoctorsController">
+            <summary>
+            Doctors If controller methods will not be Authorize, [AllowAnonymous] is used.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.DoctorsController.GetList">
+            <summary>
+            List Doctors
+            </summary>
+            <remarks>Doctors</remarks>
+            <return>List Doctors</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.DoctorsController.GetById(System.Int32)">
+            <summary>
+            It brings the details according to its id.
+            </summary>
+            <remarks>Doctors</remarks>
+            <return>Doctors List</return>
+            <response code="200"></response>  
+        </member>
+        <member name="M:WebAPI.Controllers.DoctorsController.Add(Business.Handlers.Doctors.Commands.CreateDoctorCommand)">
+            <summary>
+            Add Doctor.
+            </summary>
+            <param name="createDoctor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.DoctorsController.Update(Business.Handlers.Doctors.Commands.UpdateDoctorCommand)">
+            <summary>
+            Update Doctor.
+            </summary>
+            <param name="updateDoctor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.DoctorsController.Delete(Business.Handlers.Doctors.Commands.DeleteDoctorCommand)">
+            <summary>
+            Delete Doctor.
+            </summary>
+            <param name="deleteDoctor"></param>
+            <returns></returns>
+        </member>
         <member name="T:WebAPI.Controllers.DoctorTypesController">
             <summary>
             DoctorTypes If controller methods will not be Authorize, [AllowAnonymous] is used.
             </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.DoctorTypesController.GetDoctorTypeLookUp">
+            <summary>
+            Get doctor type Select List
+            </summary>
+            <remarks>DoctorTypeLookup</remarks>
+            <return>List doctor types Select Item</return>
+            <response code="200"></response>
         </member>
         <member name="M:WebAPI.Controllers.DoctorTypesController.GetList">
             <summary>

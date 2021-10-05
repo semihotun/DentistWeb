@@ -37,7 +37,7 @@ namespace Business.Handlers.DoctorTypes.Commands
 
             [ValidationAspect(typeof(UpdateDoctorTypeValidator), Priority = 1)]
             [CacheRemoveAspect("Get")]
-            [LogAspect(typeof(FileLogger))]
+           [LogAspect(typeof(MsSqlLogger))]
             [SecuredOperation(Priority = 1)]
             public async Task<IResult> Handle(UpdateDoctorTypeCommand request, CancellationToken cancellationToken)
             {

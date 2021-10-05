@@ -38,7 +38,7 @@ namespace Business.Handlers.AppointmentTimes.Commands
 
             [ValidationAspect(typeof(CreateAppointmentTimeValidator), Priority = 1)]
             [CacheRemoveAspect("Get")]
-            [LogAspect(typeof(FileLogger))]
+            [LogAspect(typeof(MsSqlLogger))]
             [SecuredOperation(Priority = 1)]
             public async Task<IResult> Handle(CreateAppointmentTimeCommand request, CancellationToken cancellationToken)
             {

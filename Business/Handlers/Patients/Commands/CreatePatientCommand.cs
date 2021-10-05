@@ -41,7 +41,7 @@ namespace Business.Handlers.Patients.Commands
 
             [ValidationAspect(typeof(CreatePatientValidator), Priority = 1)]
             [CacheRemoveAspect("Get")]
-            [LogAspect(typeof(FileLogger))]
+           [LogAspect(typeof(MsSqlLogger))]
             [SecuredOperation(Priority = 1)]
             public async Task<IResult> Handle(CreatePatientCommand request, CancellationToken cancellationToken)
             {

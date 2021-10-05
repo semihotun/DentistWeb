@@ -35,4 +35,9 @@ export class LookUpService {
      return this.httpClient.get<LookUp[]>(environment.getApiUrl + "/currencies/getcurrencylookUp")
   }
 
+  getDoctorTypeLookup():Observable<LookUp[]>
+  {
+     return this.httpClient.get<LookUp[]>(environment.getApiUrl + "/doctortypes/getdoctortypelookUp")
+  }
+
 }

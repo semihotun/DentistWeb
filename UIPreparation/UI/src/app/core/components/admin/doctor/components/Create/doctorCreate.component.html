@@ -1,0 +1,78 @@
+﻿<!-- Register Başla -->
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title adminTitlePadding">{{ "DoctorUpdate" | translate }}</h4>
+          </div>
+          <div class="card-body ">
+            <form *ngIf="doctorAddForm" [formGroup]="doctorAddForm" (ngSubmit)="addDoctor()">
+              <div class="row">
+                <div class="col col-md-12">
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="name" type="text" id="name" name="name" formControlName="name" />
+                    <div class="alert alert-danger" *ngIf="
+                    doctorAddForm.get('name')!.hasError('name') &&
+                    doctorAddForm.get('name')!.dirty
+                  "></div>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-md-12">
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="surname" type="text" id="surname" name="surname"
+                      formControlName="surname" />
+                    <div class="alert alert-danger" *ngIf="
+                    doctorAddForm.get('surname')!.hasError('surname') &&
+                    doctorAddForm.get('surname')!.dirty
+                  "></div>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-md-12">
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="adress" type="text" id="adress" name="adress"
+                      formControlName="adress" />
+                    <div class="alert alert-danger" *ngIf="
+                    doctorAddForm.get('adress')!.hasError('adress') &&
+                    doctorAddForm.get('adress')!.dirty
+                  "></div>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-md-12">
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="telephone" type="text" id="telephone" name="telephone"
+                      formControlName="telephone" />
+                    <div class="alert alert-danger" *ngIf="
+                    doctorAddForm.get('telephone')!.hasError('telephone') &&
+                    doctorAddForm.get('telephone')!.dirty
+                  "></div>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <select class="browser-default custom-select" formControlName="doctorTypeId">
+                    <option *ngFor="let item of doctorTypeLookUp" [value]="item.id">
+                      {{ item.label }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <button mat-raised-button type="submit" class="btn btn-danger pull-right">
+                {{ "Save" | translate }}
+              </button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

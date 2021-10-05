@@ -32,7 +32,7 @@ namespace Business.Handlers.Patients.Commands
             }
 
             [CacheRemoveAspect("Get")]
-            [LogAspect(typeof(FileLogger))]
+           [LogAspect(typeof(MsSqlLogger))]
             [SecuredOperation(Priority = 1)]
             public async Task<IResult> Handle(DeletePatientCommand request, CancellationToken cancellationToken)
             {

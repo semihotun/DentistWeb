@@ -28,6 +28,7 @@ export const USERROUTES: RouteInfo[] = [
   { path: '/appointmentTime', title: 'AppointmentTime', icon: 'update', class: '', claim: "GetAppointmentTimesQuery" },
   { path: '/patient', title: 'Patient', icon: 'update', class: '', claim: "GetPatientsQuery" },
   { path: '/disease', title: 'Disease', icon: 'update', class: '', claim: "GetDiseasesQuery" },
+  { path: '/doctor', title: 'Doctor', icon: 'update', class: '', claim: "GetDoctorsQuery" }
 ];
 
 
