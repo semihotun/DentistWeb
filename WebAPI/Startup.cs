@@ -2,6 +2,7 @@
 using Business.Helpers;
 using Core.CrossCuttingConcerns.Logging.Serilog.Loggers;
 using Core.Extensions;
+using Core.Utilities.File;
 using Core.Utilities.IoC;
 using Core.Utilities.Security.Encyption;
 using Core.Utilities.Security.Jwt;
@@ -11,6 +12,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -87,6 +89,7 @@ namespace WebAPI
             services.AddTransient<FileLogger>();
             services.AddTransient<PostgreSqlLogger>();
             services.AddTransient<MsSqlLogger>();
+            services.AddTransient<IFileService, FileManager>();
 
             base.ConfigureServices(services);
         }
@@ -102,7 +105,6 @@ namespace WebAPI
             // VERY IMPORTANT. Since we removed the build from AddDependencyResolvers, let's set the Service provider manually.
             // By the way, we can construct with DI by taking type to avoid calling static methods in aspects.
             ServiceTool.ServiceProvider = app.ApplicationServices;
-
 
             var configurationManager = app.ApplicationServices.GetService<ConfigurationManager>();
             switch (configurationManager.Mode)
@@ -149,9 +151,16 @@ namespace WebAPI
             CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
             CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
 
-            app.UseStaticFiles();
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(
+                "C:/Users/Semih/Desktop/Dentist/Files"),
+                RequestPath = "",
+            });
+
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+
         }
     }
 }
