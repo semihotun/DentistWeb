@@ -16,5 +16,7 @@ namespace Entities.Concrete
         public DateTime StartDateOfWork { get; set; }
         public bool Active { get; set; }
         public bool Deleted { get; set; }
+        public string ImagePath { get; set; }
+
     } 
 }

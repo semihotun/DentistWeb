@@ -10,9 +10,13 @@
     <CodeAnalysisRuleSet>$(SolutionDir)\shared\DevArchitectureCodeAnalysis.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Files - Copy\**" />
     <Compile Remove="Properties\PublishProfiles\**" />
+    <Content Remove="Files - Copy\**" />
     <Content Remove="Properties\PublishProfiles\**" />
+    <EmbeddedResource Remove="Files - Copy\**" />
     <EmbeddedResource Remove="Properties\PublishProfiles\**" />
+    <None Remove="Files - Copy\**" />
     <None Remove="Properties\PublishProfiles\**" />
     <_WebToolingArtifacts Remove="Properties\PublishProfiles\**" />
   </ItemGroup>

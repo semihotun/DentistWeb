@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Entities.Concrete;
 using System.Collections.Generic;
+using Core.Utilities.File;
+using System.IO;
 
 namespace WebAPI.Controllers
 {
@@ -62,11 +64,11 @@ namespace WebAPI.Controllers
         /// </summary>
         /// <param name="createDoctor"></param>
         /// <returns></returns>
-        [Produces("application/json", "text/plain")]
+        [Produces("application/json", "text/plain","multipart/form-data")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(string))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
         [HttpPost]
-        public async Task<IActionResult> Add([FromBody] CreateDoctorCommand createDoctor)
+        public async Task<IActionResult> Add([FromForm] CreateDoctorCommand createDoctor)
         {
             var result = await Mediator.Send(createDoctor);
             if (result.Success)
@@ -85,7 +87,7 @@ namespace WebAPI.Controllers
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(string))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
         [HttpPut]
-        public async Task<IActionResult> Update([FromBody] UpdateDoctorCommand updateDoctor)
+        public async Task<IActionResult> Update([FromForm] UpdateDoctorCommand updateDoctor)
         {
             var result = await Mediator.Send(updateDoctor);
             if (result.Success)
@@ -113,5 +115,7 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result.Message);
         }
+
+
     }
 }

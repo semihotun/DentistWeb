@@ -78,6 +78,17 @@
                   </mat-checkbox>
                 </div>
               </div>
+              <div class="row">
+                <div class="col-md-12 d-flex">   
+                  <div [ngClass]="doctor.imagePath != null ? 'col-md-3':'col-md-12' ">
+                    <input  placeholder="File" type="hidden"  name="ImagePath"  />          
+                    <input  placeholder="File" type="file"  (change)="changeFile($event.target.files)"  />
+                  </div>
+                  <div *ngIf="doctor.imagePath != null" class="col-md-6">
+                    <img [src]="doctor.imagePath" width="100px" height="100px">
+                  </div>
+                </div>
+              </div>
               <button mat-raised-button type="submit" class="btn btn-danger pull-right">
                 {{ "Save" | translate }}
               </button>

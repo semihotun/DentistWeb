@@ -1,8 +1,9 @@
-﻿import { HttpClient } from '@angular/common/http';
+﻿import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Doctor } from '../models/Doctor';
 import { environment } from 'environments/environment';
+import { formData } from 'app/core/defines/formData';
 
 
 @Injectable({
@@ -14,7 +15,6 @@ export class DoctorService {
 
 
   getDoctorList(): Observable<Doctor[]> {
-
     return this.httpClient.get<Doctor[]>(environment.getApiUrl + '/doctors/getall')
   }
 
@@ -23,13 +23,14 @@ export class DoctorService {
   }
 
   addDoctor(doctor: Doctor): Observable<any> {
-
-    return this.httpClient.post(environment.getApiUrl + '/doctors/', doctor, { responseType: 'text' });
+    let data=formData(doctor);
+    return this.httpClient.post(environment.getApiUrl + '/doctors/', data, { responseType: 'text' });
   }
 
   updateDoctor(doctor: Doctor): Observable<any> {
-    return this.httpClient.put(environment.getApiUrl + '/doctors/', doctor, { responseType: 'text' });
-
+    let data=formData(doctor);
+      
+    return this.httpClient.put(environment.getApiUrl + '/doctors/', data, { responseType: 'text' });  
   }
 
   deleteDoctor(id: number) {

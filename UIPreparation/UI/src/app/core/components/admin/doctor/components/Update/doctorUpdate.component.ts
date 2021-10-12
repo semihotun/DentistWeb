@@ -25,7 +25,7 @@ export class DoctorUpdateComponent implements AfterViewInit, OnInit {
 	doctorUpdateForm: FormGroup;
 	doctorTypeLookUp:LookUp[];
 	doctorId:number;
-
+	file: File;
 	constructor(private doctorService:DoctorService,
 		 private lookupService:LookUpService,
 		 private alertifyService:AlertifyService,
@@ -45,6 +45,11 @@ export class DoctorUpdateComponent implements AfterViewInit, OnInit {
 		this.getDoctorTypes();
 		this.getDoctorById();
 	}
+	changeFile(files: FileList) {
+		this.file = files.item(0);
+		this.doctorUpdateForm.controls["File"].setValue(this.file);
+	}
+
 	getDoctorTypes(){
 		this.lookupService.getDoctorTypeLookup().subscribe(data=>{
 				this.doctorTypeLookUp=data
@@ -67,13 +72,17 @@ export class DoctorUpdateComponent implements AfterViewInit, OnInit {
 			doctorTypeId : [0, Validators.required],
 			startDateOfWork : [null],
 			active : [true],
-			deleted : [false]
+			deleted : [false],
+			imagePath: [""],
+			File: []
 		})
 	}
 	getDoctorById(){
+
 		this.doctorService.getDoctorById(this.doctorId).subscribe(data=>{
-			console.log(data);
 			this.doctor=data;
+			this.doctor.imagePath=environment.getApiUrl+"/"+this.doctor.imagePath;
+			console.log(data);
 			this.doctorUpdateForm.patchValue(data);
 		})
 	}

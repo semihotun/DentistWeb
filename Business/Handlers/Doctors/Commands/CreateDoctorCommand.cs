@@ -13,6 +13,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Linq;
 using Business.Handlers.Doctors.ValidationRules;
+using Microsoft.AspNetCore.Http;
+using Core.Utilities.File;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Business.Handlers.Doctors.Commands
 {
@@ -21,7 +24,6 @@ namespace Business.Handlers.Doctors.Commands
     /// </summary>
     public class CreateDoctorCommand : IRequest<IResult>
     {
-
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Adress { get; set; }
@@ -30,16 +32,19 @@ namespace Business.Handlers.Doctors.Commands
         public System.DateTime StartDateOfWork { get; set; }
         public bool Active { get; set; }
         public bool Deleted { get; set; }
-
-
+        public string ImagePath { get; set; }
+        public IFormFile File { get; set; }
+     
         public class CreateDoctorCommandHandler : IRequestHandler<CreateDoctorCommand, IResult>
         {
             private readonly IDoctorRepository _doctorRepository;
             private readonly IMediator _mediator;
-            public CreateDoctorCommandHandler(IDoctorRepository doctorRepository, IMediator mediator)
+            IFileService _fileHelper;
+            public CreateDoctorCommandHandler(IDoctorRepository doctorRepository, IMediator mediator, IFileService fileHelper)
             {
                 _doctorRepository = doctorRepository;
                 _mediator = mediator;
+                _fileHelper = fileHelper;
             }
 
             [ValidationAspect(typeof(CreateDoctorValidator), Priority = 1)]
@@ -48,10 +53,10 @@ namespace Business.Handlers.Doctors.Commands
             [SecuredOperation(Priority = 1)]
             public async Task<IResult> Handle(CreateDoctorCommand request, CancellationToken cancellationToken)
             {
-                var isThereDoctorRecord = _doctorRepository.Query().Any(u => u.Name == request.Name);
+                var photoResult=_fileHelper.Add(FileUrl.DoctorPath, request.File,MimeTypeEnum.Image);
 
-                if (isThereDoctorRecord == true)
-                    return new ErrorResult(Messages.NameAlreadyExist);
+                if (photoResult.Success == false)
+                    return new ErrorResult(photoResult.Message);
 
                 var addedDoctor = new Doctor
                 {
@@ -63,7 +68,7 @@ namespace Business.Handlers.Doctors.Commands
                     StartDateOfWork = request.StartDateOfWork,
                     Active = request.Active,
                     Deleted = request.Deleted,
-
+                    ImagePath = photoResult.Data.Path 
                 };
 
                 _doctorRepository.Add(addedDoctor);

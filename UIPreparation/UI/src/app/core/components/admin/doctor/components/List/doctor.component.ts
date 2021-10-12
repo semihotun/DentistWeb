@@ -20,39 +20,48 @@ declare var jQuery: any;
 	styleUrls: ['./doctor.component.scss']
 })
 export class DoctorComponent implements AfterViewInit, OnInit {
-	
+
 	dataSource: MatTableDataSource<any>;
 	@ViewChild(MatPaginator) paginator: MatPaginator;
 	@ViewChild(MatSort) sort: MatSort;
-	displayedColumns: string[] = ['id','name','surname','adress','telephone','doctorTypeId','startDateOfWork','active','update','delete'];
-	doctorList:Doctor[];
-	doctorTypeLookUp:LookUp[];
+	displayedColumns: string[] = ['id', 'name', 'surname', 'adress', 'telephone', 'doctorTypeId', 'startDateOfWork', 'active', 'update', 'delete'];
+	doctorList: Doctor[];
+	doctorTypeLookUp: LookUp[];
 
-	constructor(private doctorService:DoctorService,
-		 private lookupService:LookUpService,
-		 private alertifyService:AlertifyService,
-		 private formBuilder: FormBuilder,
-		  private authService:AuthService) { }
+	constructor(private doctorService: DoctorService,
+		private lookupService: LookUpService,
+		private alertifyService: AlertifyService,
+		private formBuilder: FormBuilder,
+		private authService: AuthService) { }
 
-    ngAfterViewInit(): void {
-        this.getDoctorList();
-    }
+
+	deleteDoctor(doctorId: number) {
+		this.doctorService.deleteDoctor(doctorId).subscribe(data => {
+			this.alertifyService.success(data.toString());
+			this.doctorList = this.doctorList.filter(x => x.id != doctorId);
+			this.dataSource = new MatTableDataSource(this.doctorList);
+			this.configDataTable();
+		})
+	}
+	ngAfterViewInit(): void {
+		this.getDoctorList();
+	}
 	ngOnInit() {
 		this.getDoctorTypes();
 	}
-	getDoctorTypes(){
-		this.lookupService.getDoctorTypeLookup().subscribe(data=>{
-				this.doctorTypeLookUp=data
+	getDoctorTypes() {
+		this.lookupService.getDoctorTypeLookup().subscribe(data => {
+			this.doctorTypeLookUp = data
 		})
 	}
 	getDoctorList() {
 		this.doctorService.getDoctorList().subscribe(data => {
 			this.doctorList = data;
 			this.dataSource = new MatTableDataSource(data);
-            this.configDataTable();
+			this.configDataTable();
 		});
 	}
-	checkClaim(claim:string):boolean{
+	checkClaim(claim: string): boolean {
 		return this.authService.claimGuard(claim)
 	}
 	configDataTable(): void {
@@ -68,4 +77,4 @@ export class DoctorComponent implements AfterViewInit, OnInit {
 		}
 	}
 
-  }
+}

@@ -18,7 +18,7 @@ using static Business.Handlers.Doctors.Commands.DeleteDoctorCommand;
 using MediatR;
 using System.Linq;
 using FluentAssertions;
-
+using Core.Utilities.File;
 
 namespace Tests.Business.HandlersTest
 {
@@ -27,11 +27,14 @@ namespace Tests.Business.HandlersTest
     {
         Mock<IDoctorRepository> _doctorRepository;
         Mock<IMediator> _mediator;
+        Mock<IFileService> _fileHelper;
+
         [SetUp]
         public void Setup()
         {
             _doctorRepository = new Mock<IDoctorRepository>();
             _mediator = new Mock<IMediator>();
+            _fileHelper = new Mock<IFileService>();
         }
 
         [Test]
@@ -93,7 +96,7 @@ namespace Tests.Business.HandlersTest
 
             _doctorRepository.Setup(x => x.Add(It.IsAny<Doctor>())).Returns(new Doctor());
 
-            var handler = new CreateDoctorCommandHandler(_doctorRepository.Object, _mediator.Object);
+            var handler = new CreateDoctorCommandHandler(_doctorRepository.Object, _mediator.Object,_fileHelper.Object);
             var x = await handler.Handle(command, new System.Threading.CancellationToken());
 
             _doctorRepository.Verify(x => x.SaveChangesAsync());
@@ -114,7 +117,7 @@ namespace Tests.Business.HandlersTest
 
             _doctorRepository.Setup(x => x.Add(It.IsAny<Doctor>())).Returns(new Doctor());
 
-            var handler = new CreateDoctorCommandHandler(_doctorRepository.Object, _mediator.Object);
+            var handler = new CreateDoctorCommandHandler(_doctorRepository.Object, _mediator.Object,_fileHelper.Object);
             var x = await handler.Handle(command, new System.Threading.CancellationToken());
 
             x.Success.Should().BeFalse();

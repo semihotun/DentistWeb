@@ -9,5 +9,7 @@ doctorTypeId?:number;
 startDateOfWork?:(Date | any); 
 active:boolean; 
 deleted:boolean; 
+imagePath?:string;
+File:File;
 
 }
