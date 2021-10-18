@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Entities.Concrete;
 using System.Collections.Generic;
+using Core.Entities.Dtos;
 
 namespace WebAPI.Controllers
 {
@@ -17,6 +18,25 @@ namespace WebAPI.Controllers
     [ApiController]
     public class DiseasesController : BaseApiController
     {
+        ///<summary>
+        ///Disease Dropdown
+        ///</summary>
+        ///<remarks>Diseases</remarks>
+        ///<return>DropDown Diseases</return>
+        ///<response code="200"></response>
+        [Produces("application/json", "text/plain")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<SelectionItem>))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
+        [HttpGet("getdiseaselookUp")]
+        public async Task<IActionResult> GetDiseaseLookUp()
+        {
+            var result = await Mediator.Send(new GetDiseaseLookUpQuery());
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+            return BadRequest(result.Message);
+        }
         ///<summary>
         ///List Diseases
         ///</summary>

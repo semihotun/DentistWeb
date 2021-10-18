@@ -28,14 +28,7 @@ import { OperationClaimComponent } from '../components/admin/operationclaim/oper
 import { LogDtoComponent } from '../components/admin/log/logDto.component';
 import { MatSortModule } from '@angular/material/sort';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
-import { DoctorTypeComponent } from '../components/admin/doctorType/doctorType.component';
-import { AppointmentTimeComponent } from '../components/admin/appointmentTime/appointmentTime.component';
-import { CurrencyComponent } from '../components/admin/currency/currency.component';
-import { PatientComponent } from '../components/admin/patient/patient.component';
-import { DiseaseComponent } from '../components/admin/disease/disease.component';
-import { DoctorCreateComponent } from '../components/admin/doctor/components/Create/doctorCreate.component';
-import { DoctorUpdateComponent } from '../components/admin/doctor/components/Update/doctorUpdate.component';
-import { DoctorComponent } from '../components/admin/doctor/components/List/doctor.component';
+import { AdminLayoutCustomModule } from 'app/modules/admin/admin-custom.module';
 
 
 // export function layoutHttpLoaderFactory(http: HttpClient) {
@@ -45,6 +38,7 @@ import { DoctorComponent } from '../components/admin/doctor/components/List/doct
 
 @NgModule({
     imports: [
+        AdminLayoutCustomModule,
         CommonModule,
         RouterModule.forChild(AdminLayoutRoutes),
         FormsModule,
@@ -79,16 +73,7 @@ import { DoctorComponent } from '../components/admin/doctor/components/List/doct
         LanguageComponent,
         TranslateComponent,
         OperationClaimComponent,
-        LogDtoComponent,
-        DoctorTypeComponent,
-        AppointmentTimeComponent,
-        CurrencyComponent,
-        PatientComponent,
-        DiseaseComponent,
-        DoctorComponent,
-        DoctorCreateComponent,
-        DoctorUpdateComponent
-        
+        LogDtoComponent,       
     ]
 })
 

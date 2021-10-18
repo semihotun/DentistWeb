@@ -29,15 +29,5 @@ export class LookUpService {
   getLanguageLookup():Observable<LookUp[]>{
     return this.httpClient.get<LookUp[]>(environment.getApiUrl + "/Languages/getlookup")
   }
-
-  getCurrencyLookup():Observable<LookUp[]>
-  {
-     return this.httpClient.get<LookUp[]>(environment.getApiUrl + "/currencies/getcurrencylookUp")
-  }
-
-  getDoctorTypeLookup():Observable<LookUp[]>
-  {
-     return this.httpClient.get<LookUp[]>(environment.getApiUrl + "/doctortypes/getdoctortypelookUp")
-  }
-
+  
 }

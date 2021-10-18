@@ -10,8 +10,6 @@ declare let alertify: any;
 })
 export class AlertifyService {
 
-
-
   constructor(private httpClient: HttpClient, public translateService: TranslateService) {
 
     alertify.set('notifier', 'position', 'top-right');

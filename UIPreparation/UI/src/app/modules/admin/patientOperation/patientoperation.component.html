@@ -1,0 +1,53 @@
+﻿<form *ngIf="patientOperationAddForm" [formGroup]="patientOperationAddForm" (ngSubmit)="save()">
+  <div class="d-flex ">
+    <div class="col-md-12">
+      <select class="browser-default form-control" formControlName="diseaseId">
+        <option *ngFor="let item of diseaseLookUp" [value]="item.id"> {{item.label}}</option>
+      </select>
+    </div>
+    <button type="submit"  class="border-0 m-0 p-0" *ngIf="checkClaim('CreatePatientCommand')"  style="color:#f44336">
+      <i style="color:#ff5722" title="{{'Add'| translate}}" class="far fa-plus-square fa-2x pull-right" style="font-size:36px;" ></i>
+    </button>
+    <div class="clearfix"></div>
+  </div>
+</form>
+
+
+
+
+<div class="table-responsive">
+  <div class="col-md-4 pull-right">
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="" #input>
+    </mat-form-field>
+  </div>
+  <table mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="diseaseName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'DiseaseName'|translate}}</th>
+      <td mat-cell *matCellDef="let element">{{element.diseaseName}}</td>
+    </ng-container>
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td style="width: 25px;" mat-cell *matCellDef="let element">
+        <a *ngIf="checkClaim('DeletePatientOperationCommand')" (confirm)="deletePatientOperation(element.id)"
+          [swal]="deleteSwal"><i title="{{'Delete'| translate}}" style="color: #D9534E;"
+            class="fas fa-trash-alt"></i></a>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr class="mat-row" *matNoDataRow style="text-align: center;">
+      <td class="mat-cell" colspan="4">{{'NoRecordsFound' |translate}} "{{input.value}}"</td>
+    </tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]"></mat-paginator>
+</div>
+
+
+
+
+
+<swal #deleteSwal title="{{'DeleteConfirm' | translate}}" icon="error" [showCancelButton]="true"
+  [confirmButtonText]="'OK'" [cancelButtonText]="'Cancel'">
+</swal>

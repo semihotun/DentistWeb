@@ -8,7 +8,7 @@ namespace Entities.Concrete
     public class PatientOperation : IEntity
     {
         public int Id { get; set; }
-        public int PatientId { get; set; }
-        public int DiseaseId { get; set; }
+        public int PatientId { get; set; }//hasta
+        public int DiseaseId { get; set; }//hastalık
     }
 }
