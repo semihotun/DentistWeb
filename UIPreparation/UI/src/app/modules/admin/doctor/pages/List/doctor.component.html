@@ -10,122 +10,15 @@
               <i style="color: white" title="{{ 'Add' | translate }}" class="far fa-plus-square fa-2x"></i></a>
           </div>
           <div class="card-body">
-            <div class="table-responsive">
-              <div class="col-md-4 pull-right">
-                <mat-form-field>
-                  <mat-label>Filter</mat-label>
-                  <input matInput (keyup)="applyFilter($event)" placeholder="" #input />
-                </mat-form-field>
-              </div>
-              <table mat-table [dataSource]="dataSource" matSort>
-                <ng-container matColumnDef="id">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header>
-                    {{ "Id" | translate }}
-                  </th>
-                  <td mat-cell *matCellDef="let element">{{ element.id }}</td>
-                </ng-container>
-
-                <ng-container matColumnDef="name">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header>
-                    {{ "Name" | translate }}
-                  </th>
-                  <td mat-cell *matCellDef="let element">{{ element.name }}</td>
-                </ng-container>
-
-                <ng-container matColumnDef="surname">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header>
-                    {{ "Surname" | translate }}
-                  </th>
-                  <td mat-cell *matCellDef="let element">
-                    {{ element.surname }}
-                  </td>
-                </ng-container>
-
-                <ng-container matColumnDef="adress">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header>
-                    {{ "Adress" | translate }}
-                  </th>
-                  <td mat-cell *matCellDef="let element">
-                    {{ element.adress }}
-                  </td>
-                </ng-container>
-
-                <ng-container matColumnDef="telephone">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header>
-                    {{ "Telephone" | translate }}
-                  </th>
-                  <td mat-cell *matCellDef="let element">
-                    {{ element.telephone }}
-                  </td>
-                </ng-container>
-
-                <ng-container matColumnDef="doctorTypeId">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header>
-                    {{ "DoctorTypeId" | translate }}
-                  </th>
-                  <td mat-cell *matCellDef="let element">
-                    {{ element.doctorTypeId }}
-                  </td>
-                </ng-container>
-
-                <ng-container matColumnDef="startDateOfWork">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header>
-                    {{ "StartDateOfWork" | translate }}
-                  </th>
-                  <td mat-cell *matCellDef="let element">
-                    {{ element.startDateOfWork }}
-                  </td>
-                </ng-container>
-
-                <ng-container matColumnDef="active">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header>
-                    {{ "Active" | translate }}
-                  </th>
-                  <td mat-cell *matCellDef="let element">
-                    <mat-checkbox [checked]="element.active" [disabled]="true"></mat-checkbox>
-                  </td>
-                </ng-container>
-
-                <ng-container matColumnDef="update">
-                  <th mat-header-cell *matHeaderCellDef></th>
-                  <td style="width: 25px" mat-cell *matCellDef="let element">
-
-                    <a *ngIf="checkClaim('UpdateDoctorCommand')" data-toggle="modal" data-target="#doctorUpdate"
-                     routerLink="/doctorUpdate/{{element.id}}">
-                      <i title="{{ 'Update' | translate }}" style="color: #ff5722" class="far fa-edit"></i>
-                    </a>
-
-                  </td>
-                </ng-container>
-
-                <ng-container matColumnDef="delete">
-                  <th mat-header-cell *matHeaderCellDef></th>
-                  <td style="width: 25px" mat-cell *matCellDef="let element">
-                    <a *ngIf="checkClaim('DeleteDoctorCommand')" (confirm)="deleteDoctor(element.id)"
-                      [swal]="deleteSwal"><i title="{{ 'Delete' | translate }}" style="color: #d9534e"
-                        class="fas fa-trash-alt"></i></a>
-                  </td>
-                </ng-container>
-
-                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-
-                <tr class="mat-row" *matNoDataRow style="text-align: center">
-                  <td class="mat-cell" colspan="4">
-                    {{ "NoRecordsFound" | translate }} "{{ input.value }}"
-                  </td>
-                </tr>
-              </table>
-              <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]"></mat-paginator>
-            </div>
+            <app-customgrid 
+            [url]="'/doctors/getallpagedlist'" 
+            [btnColumnOn]="true"
+            [editBtnUrl]="'#/doctorUpdate/'"
+            [deleteBtnUrl]="'/doctors/'">
+            </app-customgrid>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
-<swal #deleteSwal title="{{ 'DeleteConfirm' | translate }}" icon="error" [showCancelButton]="true"
-  [confirmButtonText]="'OK'" [cancelButtonText]="'Cancel'">
-</swal>

@@ -16,6 +16,8 @@ import { RouterModule } from "@angular/router";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { SweetAlert2Module } from "@sweetalert2/ngx-sweetalert2";
+import { CustomGridComponent } from "app/core/components/admin/grid/customgrid/customgrid.component";
+import { ChangeFilterNamePipe } from "app/core/components/admin/grid/customgrid/pipes/change-filter-name.pipe";
 import { TranslationService } from "app/core/services/translation.service";
 import { NgMultiSelectDropDownModule } from "ng-multiselect-dropdown";
 import { AdminCustomLayoutRoutes } from "./admin-custom-layout.routing";
@@ -68,6 +70,8 @@ export const modules = [
     DoctorCreateComponent,
     DoctorUpdateComponent,
     PatientOperationComponent,
+    CustomGridComponent,
+    ChangeFilterNamePipe
   ]
 
 
@@ -75,7 +79,8 @@ export const modules = [
     imports: [modules],
     declarations: [
         declarationComponent  
-    ]
+    ],
+    exports:[CustomGridComponent,ChangeFilterNamePipe]
 })
 
 export class AdminLayoutCustomModule { }

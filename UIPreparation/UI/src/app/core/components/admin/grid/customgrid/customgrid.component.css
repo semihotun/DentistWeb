@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800");
+
+table tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+.form-control{
+    background-image: none !important;
+}
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+}
+
+#myCustomTable {
+    border: 1px solid #e0e0e0 !important;
+  font-family: Poppins;
+  background-color: white;
+}
+
+#myCustomTable th {
+  font-size: 15px;
+  font-family: Poppins;
+  padding: 15px;
+}
+
+#myCustomTable tbody tr:hover {
+  background-color: #fafafa;
+}
+
+#myCustomTable thead {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+#myCustomTable td {
+  padding: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.prev-btn {
+  font-size: 32px;
+  border: 1px solid #e0e0e0;
+  padding: 5px;
+}
+
+.next-btn {
+  border-bottom-right-radius: 15px;
+  font-size: 32px;
+  border: 1px solid #e0e0e0;
+  padding: 5px;
+}
+
+.tablefooter {
+  margin-top: 10px;
+}
+
+.next-btn:hover,
+.prev-btn:hover {
+  cursor: pointer;
+}
+
+.prevNextDisabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.gridBottom {
+  border: 1px solid #e0e0e0;
+  padding: 0px 8px;
+}
+
+.goToPageBtn {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+}
+.goToPageTextBox {
+  width: 40px;
+}
+
+.pageSize select {
+  border-bottom-left-radius: 15px;
+}
+
+.btn-outline-dark {
+  font-size: 11px;
+  font-family: Poppins;
+  margin-top: 0px;
+  color: #343a40;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid #e0e0e0;
+}
+
+.btn-outline-dark:hover {
+  color: #fff;
+  background-color: #343a40;
+  border-color: #343a40;
+}
+
+.table {
+  display: table;
+}
+
+#collapseBtn {
+  border: 1px solid #e0e0e0;
+  padding: 8px 6px;
+}
+#filterContainer select,
+#filterContainer input,
+#filterContainer button {
+  margin-right: 5px;
+}
+@media only screen and (max-width: 600px) {
+  #filterContainer select,
+  #filterContainer input,
+  #filterContainer button {
+    margin-top: 5px;
+    margin-right: 0px;
+  }
+}
+
+.noneCursor:hover{
+  cursor:not-allowed;
+}

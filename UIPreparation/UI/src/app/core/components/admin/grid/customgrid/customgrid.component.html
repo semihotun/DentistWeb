@@ -1,0 +1,163 @@
+<div class="main-content">
+  <!-- Seçili Filter Başla -->
+  <div class="d-flex flex-wrap">
+    <ng-container *ngFor="let filterModel of filterModelList">
+      <span class="badge badge-danger" style="font-size: 14px">{{
+        filterModel.andOrOperation
+        }}</span>
+      <span class="badge badge-dark" style="font-size: 14px" (click)="deleteFilter(filterModel)">
+        {{ filterModel | changeFilterName }}
+        <span aria-hidden="true" style="color: red">&times;</span>
+      </span>
+    </ng-container>
+  </div>
+  <!-- Seçili Filter Bitiş -->
+  <!-- Filter Başla -->
+  <div class="d-flex flex-wrap mt-2" id="filterContainer">
+    <select class="browser-default custom-select form-control col-md-1 pl-3 rounded" [(ngModel)]="andOrSelected"
+      style="border: 1px solid #e0e0e0" *ngIf="filterModelList.length > 0">
+      <option class="dropdown-item" disabled selected value="undefined">
+        {{ "And/Or" | translate }}
+      </option>
+      <option value="And">{{ "And" | translate }}</option>
+      <option value="Or">{{ "Or" | translate }}</option>
+    </select>
+    <select class="browser-default custom-select form-control col-md-4 pl-3 rounded" (change)="changeFilter($event)"
+      style="border: 1px solid #e0e0e0">
+      <option class="dropdown-item" disabled selected value="undefined">
+        {{ "Filitrelenecek alanı seçiniz" | translate }}
+      </option>
+      <option *ngFor="let item of keys" [value]="item.propertyType">
+        {{ item.propertyName }}
+      </option>
+    </select>
+    <select class="browser-default custom-select form-control col-md-2 pl-3 rounded" [(ngModel)]="filterType"
+      style="border: 1px solid #e0e0e0">
+      <option class="dropdown-item" disabled selected value="undefined">
+        {{ "Operasyon seçiniz" | translate }}
+      </option>
+      <option *ngFor="let item of filters" [value]="item.value">
+        {{ item.text }}
+      </option>
+    </select>
+    <input type="text" class="form-control col-md-2 pl-3 rounded" [(ngModel)]="filter" style="border: 1px solid #e0e0e0"
+      placeholder="{{ 'Yazı giriniz' | translate }}" />
+    <input type="submit" class="btn btn-outline-dark col-md-1 form-control rounded" (click)="addFilter()" />
+  </div>
+  <!-- Filter Bitiş -->
+  <div class="table-responsive">
+    <!-- Table Başla -->
+    <table id="myCustomTable" class="mt-3 table">
+      <thead>
+        <tr>
+          <ng-container *ngFor="let key of keys">
+
+            <ng-container *ngIf="key.attrFilterName == null">
+              <th *ngIf="key.checked == true" (click)="changeOrderBy(key.propertyName)">
+                <div class="d-flex justify-content-between">
+                  <span>{{ key.propertyName | titlecase }}</span>
+                </div>
+              </th>
+            </ng-container>
+
+            <ng-container *ngIf="key.attrFilterName != null" >
+              <th *ngIf="key.checked == true" > 
+                <div class="d-flex justify-content-between">
+                  <div class="noneCursor noneSelected">{{ key.propertyName | titlecase }}</div>
+                </div>
+              </th>
+            </ng-container>     
+          </ng-container>
+
+          <ng-container *ngIf="btnColumnOn==true">
+            <th ></th>
+            <th ></th>
+          </ng-container>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of datas">
+        <ng-container *ngIf="btnColumnOn==false">
+          <ng-container *ngFor="let datakey of keys">
+            <td *ngIf="datakey.checked == true">
+              {{ data[datakey.propertyName] }}
+            </td>
+          </ng-container>
+        </ng-container>
+
+        <ng-container *ngIf="btnColumnOn==true">
+          <ng-container *ngFor="let datakey of keys">
+            <td *ngIf="datakey.checked == true">
+              {{ data[datakey.propertyName] }}
+            </td>
+          </ng-container>
+          <td style="width: 25px;">
+            <a [href]="editBtnUrl+ data['id']" style="color: #ff5722;"><i class="far fa-edit"></i></a> 
+          </td>
+          <td style="width: 25px; ">
+            <a (click)="deleteBtn(data['id'])" style="color: #d9534e;"><i class="fas fa-trash-alt"></i></a>
+          </td>
+        </ng-container>
+
+        </tr>
+      </tbody>
+    </table>
+    <!-- Table Bitiş -->
+    <!-- Table Footer Başla -->
+    <div class="tablefooter d-flex justify-content-between">
+      <div class="pageSize d-flex">
+        <select class="gridBottom" (change)="pageSizeChange($event)">
+          <option value="10">10</option>
+          <option value="25">25</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
+        <div type="button" data-toggle="collapse" id="collapseBtn" data-target="#collapseExample" aria-expanded="false"
+          aria-controls="collapseExample">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-columns"
+            viewBox="0 0 16 16">
+            <path
+              d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V2zm8.5 0v8H15V2H8.5zm0 9v3H15v-3H8.5zm-1-9H1v3h6.5V2zM1 14h6.5V6H1v8z" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="goPage">
+        <span class="mr-2">Şuanki Sayfa {{ gridPostData.pageIndex }}/{{ totalPages }}</span>
+        <input type="text" [(ngModel)]="goToPageIndex" class="gridBottom goToPageTextBox" />
+        <button type="button" class="gridBottom goToPageBtn" (click)="changePageIndex()">
+          Go
+        </button>
+      </div>
+
+      <div class="d-flex" id="prevNext">
+        <div #prevBtn class="prev-btn" (click)="prevClick()" id="">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+          </svg>
+        </div>
+        <div #nextBtn class="next-btn" (click)="nextClick()" id="">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <!-- Table Footer Bitiş -->
+  </div>
+
+  <!-- Seçili Sütunlar Başla -->
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+      <div class="d-flex flex-wrap">
+        <div *ngFor="let checkBoxKey of keys" class="mr-2">
+          <input type="checkbox" [checked]="checkBoxKey.checked == true"
+            (change)="changeCheckBoxProperty(checkBoxKey.propertyName)" />
+          {{ checkBoxKey.propertyName }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Seçili Sütunlar Bitiş -->
+</div>

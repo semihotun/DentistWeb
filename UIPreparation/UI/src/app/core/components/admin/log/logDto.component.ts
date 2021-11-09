@@ -37,8 +37,6 @@ export class LogDtoComponent implements AfterViewInit, OnInit {
 	constructor(private logDtoService: LogDtoService, private lookupService: LookUpService, private alertifyService: AlertifyService, private formBuilder: FormBuilder, private authService: AuthService) { }
 
 	ngOnInit() {
-
-		this.getLogDtoList();
 	}
 
 	getLogDtoList() {
@@ -54,7 +52,7 @@ export class LogDtoComponent implements AfterViewInit, OnInit {
 	}
 
 	ngAfterViewInit(): void {
-		this.getLogDtoList();
+		// this.getLogDtoList();
 	}
 
 	clearFormGroup(group: FormGroup) {
