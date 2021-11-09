@@ -62,6 +62,7 @@ namespace DataAccess.Concrete.EntityFramework.Contexts
         public DbSet<Disease> Diseases { get; set; }
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<PatientOperation> PatientOperations { get; set; }
+        public DbSet<GridSettings> GridSettings { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
