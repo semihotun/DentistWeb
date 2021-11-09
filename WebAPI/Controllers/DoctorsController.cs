@@ -9,6 +9,7 @@ using Entities.Concrete;
 using System.Collections.Generic;
 using Core.Utilities.File;
 using System.IO;
+using Core.Utilities.Pagedlist;
 
 namespace WebAPI.Controllers
 {
@@ -19,6 +20,24 @@ namespace WebAPI.Controllers
     [ApiController]
     public class DoctorsController : BaseApiController
     {
+        /// <summary>
+        /// PagedList Logs
+        /// </summary>
+        /// <response code="200"></response>
+        [Produces("application/json", "text/plain")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IPagedList<Doctor>))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
+        [HttpPost("getallpagedlist")]
+        public async Task<IActionResult> GetPagedList([FromBody] PagedListFilterModel pagedListFilterModel)
+        {
+            var result = await Mediator.Send(new GetDoctorPagedListQuery { pagedListFilterModel = pagedListFilterModel });
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+            return BadRequest(result.Message);
+        }
+
         ///<summary>
         ///List Doctors
         ///</summary>

@@ -31,7 +31,6 @@ namespace DataAccess.Concrete.EntityFramework
                             DiseaseName= dj.Name,
                             PatientId=p.PatientId
                         };
-
             var result = await query.ToListAsync();
             return result;
         }

@@ -1,7 +1,10 @@
 ﻿using Business.Handlers.Logs.Queries;
 using Core.Entities.Concrete;
+using Core.Entities.Dtos;
+using Core.Utilities.Pagedlist;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -17,11 +20,9 @@ namespace WebAPI.Controllers
         /// <summary>
         /// List Logs
         /// </summary>
-        /// <remarks>bla bla bla Logs</remarks>
-        /// <return>Logs List</return>
         /// <response code="200"></response>
         [Produces("application/json", "text/plain")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<OperationClaim>))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<LogDto>))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
         [HttpGet("getall")]
         public async Task<IActionResult> GetList()
@@ -32,6 +33,25 @@ namespace WebAPI.Controllers
                 return Ok(result.Data);
             }
 
+            return BadRequest(result.Message);
+        }
+        /// <summary>
+        /// PagedList Logs
+        /// </summary>
+        /// <response code="200"></response>
+        [Produces("application/json", "text/plain")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IPagedList<LogDto>))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
+        [HttpPost("getallpagedlist")]
+        public async Task<IActionResult> GetPagedList([FromBody] PagedListFilterModel pagedListFilterModel)
+        {
+            var result = await Mediator.Send(new GetLogDtoPagedListQuery{ pagedListFilterModel = pagedListFilterModel });
+
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+  
             return BadRequest(result.Message);
         }
     }
