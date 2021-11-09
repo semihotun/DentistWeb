@@ -63,7 +63,8 @@ import { AdminLayoutCustomModule } from 'app/modules/admin/admin-custom.module';
                 useClass: TranslationService,
                 deps: [HttpClient]
             }
-        })
+        }),
+ 
     ],
     declarations: [
         DashboardComponent,
@@ -73,7 +74,7 @@ import { AdminLayoutCustomModule } from 'app/modules/admin/admin-custom.module';
         LanguageComponent,
         TranslateComponent,
         OperationClaimComponent,
-        LogDtoComponent,       
+        LogDtoComponent  
     ]
 })
 

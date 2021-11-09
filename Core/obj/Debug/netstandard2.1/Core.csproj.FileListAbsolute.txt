@@ -1,10 +1,10 @@
 C:\Users\Semih\source\repos\DentistWeb\Core\bin\Debug\netstandard2.1\Core.deps.json
 C:\Users\Semih\source\repos\DentistWeb\Core\bin\Debug\netstandard2.1\Core.dll
 C:\Users\Semih\source\repos\DentistWeb\Core\bin\Debug\netstandard2.1\Core.pdb
-C:\Users\Semih\source\repos\DentistWeb\Core\obj\Debug\netstandard2.1\Core.csprojAssemblyReference.cache
 C:\Users\Semih\source\repos\DentistWeb\Core\obj\Debug\netstandard2.1\Core.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Semih\source\repos\DentistWeb\Core\obj\Debug\netstandard2.1\Core.AssemblyInfoInputs.cache
 C:\Users\Semih\source\repos\DentistWeb\Core\obj\Debug\netstandard2.1\Core.AssemblyInfo.cs
 C:\Users\Semih\source\repos\DentistWeb\Core\obj\Debug\netstandard2.1\Core.csproj.CoreCompileInputs.cache
 C:\Users\Semih\source\repos\DentistWeb\Core\obj\Debug\netstandard2.1\Core.dll
 C:\Users\Semih\source\repos\DentistWeb\Core\obj\Debug\netstandard2.1\Core.pdb
+C:\Users\Semih\source\repos\DentistWeb\Core\obj\Debug\netstandard2.1\Core.csprojAssemblyReference.cache

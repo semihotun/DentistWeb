@@ -308,6 +308,14 @@
             Diseases If controller methods will not be Authorize, [AllowAnonymous] is used.
             </summary>
         </member>
+        <member name="M:WebAPI.Controllers.DiseasesController.GetDiseaseLookUp">
+            <summary>
+            Disease Dropdown
+            </summary>
+            <remarks>Diseases</remarks>
+            <return>DropDown Diseases</return>
+            <response code="200"></response>
+        </member>
         <member name="M:WebAPI.Controllers.DiseasesController.GetList">
             <summary>
             List Diseases
@@ -435,6 +443,40 @@
             Delete DoctorType.
             </summary>
             <param name="deleteDoctorType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebAPI.Controllers.GridSettingsesController">
+            <summary>
+            GridSettingses If controller methods will not be Authorize, [AllowAnonymous] is used.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.GridSettingsesController.GetById(System.String)">
+            <summary>
+            It brings the details according to its id.
+            </summary>
+            <remarks>GridSettingses</remarks>
+            <return>GridSettingses List</return>
+            <response code="200"></response>  
+        </member>
+        <member name="M:WebAPI.Controllers.GridSettingsesController.Add(Business.Handlers.GridSettingses.Commands.CreateGridSettingsCommand)">
+            <summary>
+            Add GridSettings.
+            </summary>
+            <param name="createGridSettings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.GridSettingsesController.Update(Business.Handlers.GridSettingses.Commands.UpdateGridSettingsCommand)">
+            <summary>
+            Update GridSettings.
+            </summary>
+            <param name="updateGridSettings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.GridSettingsesController.Delete(Business.Handlers.GridSettingses.Commands.DeleteGridSettingsCommand)">
+            <summary>
+            Delete GridSettings.
+            </summary>
+            <param name="deleteGridSettings"></param>
             <returns></returns>
         </member>
         <member name="T:WebAPI.Controllers.GroupClaimsController">
@@ -606,8 +648,12 @@
             <summary>
             List Logs
             </summary>
-            <remarks>bla bla bla Logs</remarks>
-            <return>Logs List</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.LogsController.GetPagedList(Core.Utilities.Pagedlist.PagedListFilterModel)">
+            <summary>
+            PagedList Logs
+            </summary>
             <response code="200"></response>
         </member>
         <member name="T:WebAPI.Controllers.OperationClaimsController">
@@ -654,6 +700,56 @@
             <remarks>bla bla bla OperationClaims</remarks>
             <return>OperationClaims List</return>
             <response code="200"></response>
+        </member>
+        <member name="T:WebAPI.Controllers.PatientOperationsController">
+            <summary>
+            PatientOperations If controller methods will not be Authorize, [AllowAnonymous] is used.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.PatientOperationsController.GetPatientOperationDTOByPatientId(System.Int32)">
+            <summary>
+            List PatientOperations DTO
+            </summary>
+            <remarks>PatientOperations DTO</remarks>
+            <return>List PatientOperations DTO</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.PatientOperationsController.GetList">
+            <summary>
+            List PatientOperations
+            </summary>
+            <remarks>PatientOperations</remarks>
+            <return>List PatientOperations</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.PatientOperationsController.GetById(System.Int32)">
+            <summary>
+            It brings the details according to its id.
+            </summary>
+            <remarks>PatientOperations</remarks>
+            <return>PatientOperations List</return>
+            <response code="200"></response>  
+        </member>
+        <member name="M:WebAPI.Controllers.PatientOperationsController.Add(Business.Handlers.PatientOperations.Commands.CreatePatientOperationCommand)">
+            <summary>
+            Add PatientOperation.
+            </summary>
+            <param name="createPatientOperation"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.PatientOperationsController.Update(Business.Handlers.PatientOperations.Commands.UpdatePatientOperationCommand)">
+            <summary>
+            Update PatientOperation.
+            </summary>
+            <param name="updatePatientOperation"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.PatientOperationsController.Delete(Business.Handlers.PatientOperations.Commands.DeletePatientOperationCommand)">
+            <summary>
+            Delete PatientOperation.
+            </summary>
+            <param name="deletePatientOperation"></param>
+            <returns></returns>
         </member>
         <member name="T:WebAPI.Controllers.PatientsController">
             <summary>

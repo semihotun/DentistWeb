@@ -5,7 +5,6 @@ C:\Users\Semih\source\repos\DentistWeb\UIPreparation\bin\Debug\net5.0\UIPreparat
 C:\Users\Semih\source\repos\DentistWeb\UIPreparation\bin\Debug\net5.0\UIPreparation.dll
 C:\Users\Semih\source\repos\DentistWeb\UIPreparation\bin\Debug\net5.0\ref\UIPreparation.dll
 C:\Users\Semih\source\repos\DentistWeb\UIPreparation\bin\Debug\net5.0\UIPreparation.pdb
-C:\Users\Semih\source\repos\DentistWeb\UIPreparation\obj\Debug\net5.0\UIPreparation.csprojAssemblyReference.cache
 C:\Users\Semih\source\repos\DentistWeb\UIPreparation\obj\Debug\net5.0\UIPreparation.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Semih\source\repos\DentistWeb\UIPreparation\obj\Debug\net5.0\UIPreparation.AssemblyInfoInputs.cache
 C:\Users\Semih\source\repos\DentistWeb\UIPreparation\obj\Debug\net5.0\UIPreparation.AssemblyInfo.cs
@@ -14,3 +13,4 @@ C:\Users\Semih\source\repos\DentistWeb\UIPreparation\obj\Debug\net5.0\UIPreparat
 C:\Users\Semih\source\repos\DentistWeb\UIPreparation\obj\Debug\net5.0\ref\UIPreparation.dll
 C:\Users\Semih\source\repos\DentistWeb\UIPreparation\obj\Debug\net5.0\UIPreparation.pdb
 C:\Users\Semih\source\repos\DentistWeb\UIPreparation\obj\Debug\net5.0\UIPreparation.genruntimeconfig.cache
+C:\Users\Semih\source\repos\DentistWeb\UIPreparation\obj\Debug\net5.0\UIPreparation.csprojAssemblyReference.cache

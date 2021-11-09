@@ -222,3 +222,4 @@ C:\Users\Semih\source\repos\DentistWeb\WebAPI\obj\Debug\net5.0\ref\WebAPI.dll
 C:\Users\Semih\source\repos\DentistWeb\WebAPI\obj\Debug\net5.0\WebAPI.xml
 C:\Users\Semih\source\repos\DentistWeb\WebAPI\obj\Debug\net5.0\WebAPI.pdb
 C:\Users\Semih\source\repos\DentistWeb\WebAPI\obj\Debug\net5.0\WebAPI.genruntimeconfig.cache
+C:\Users\Semih\source\repos\DentistWeb\WebAPI\bin\Debug\net5.0\System.Linq.Dynamic.Core.dll

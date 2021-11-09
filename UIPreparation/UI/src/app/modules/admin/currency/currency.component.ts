@@ -39,10 +39,8 @@ export class CurrencyComponent implements AfterViewInit, OnInit {
     }
 
 	ngOnInit() {
-
 		this.createCurrencyAddForm();
 	}
-
 
 	getCurrencyList() {
 		this.currencyService.getCurrencyList().subscribe(data => {
@@ -53,7 +51,6 @@ export class CurrencyComponent implements AfterViewInit, OnInit {
 	}
 
 	save(){
-
 		if (this.currencyAddForm.valid) {
 			this.currency = Object.assign({}, this.currencyAddForm.value)
 

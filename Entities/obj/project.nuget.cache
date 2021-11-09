@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Xy8Zvh55ohUU7gX+JaUQudKWnEqc2l/olTC9Uwzvtjt7eKJiigamiQnyAUOMcWkk1Bckvm4XsapzU11xHUO87A==",
+  "dgSpecHash": "6MB8dLt7JQM3WhwNhnLkHJh5QLu0rbETwiff/F5InqMd7fQLIQlPGGriShVDlbt8n6uhHy5HzBmdp/jDU/hIlA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Semih\\source\\repos\\DentistWeb\\Entities\\Entities.csproj",
   "expectedPackageFiles": [
@@ -161,6 +161,7 @@
     "C:\\Users\\Semih\\.nuget\\packages\\system.io.filesystem.accesscontrol\\4.7.0\\system.io.filesystem.accesscontrol.4.7.0.nupkg.sha512",
     "C:\\Users\\Semih\\.nuget\\packages\\system.io.filesystem.primitives\\4.3.0\\system.io.filesystem.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\Semih\\.nuget\\packages\\system.linq\\4.3.0\\system.linq.4.3.0.nupkg.sha512",
+    "C:\\Users\\Semih\\.nuget\\packages\\system.linq.dynamic.core\\1.2.13\\system.linq.dynamic.core.1.2.13.nupkg.sha512",
     "C:\\Users\\Semih\\.nuget\\packages\\system.linq.expressions\\4.3.0\\system.linq.expressions.4.3.0.nupkg.sha512",
     "C:\\Users\\Semih\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\Semih\\.nuget\\packages\\system.net.http\\4.3.2\\system.net.http.4.3.2.nupkg.sha512",

@@ -358,6 +358,12 @@
             Doctors If controller methods will not be Authorize, [AllowAnonymous] is used.
             </summary>
         </member>
+        <member name="M:WebAPI.Controllers.DoctorsController.GetPagedList(Core.Utilities.Pagedlist.PagedListFilterModel)">
+            <summary>
+            PagedList Logs
+            </summary>
+            <response code="200"></response>
+        </member>
         <member name="M:WebAPI.Controllers.DoctorsController.GetList">
             <summary>
             List Doctors
@@ -443,6 +449,40 @@
             Delete DoctorType.
             </summary>
             <param name="deleteDoctorType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebAPI.Controllers.GridSettingsesController">
+            <summary>
+            GridSettingses If controller methods will not be Authorize, [AllowAnonymous] is used.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.GridSettingsesController.GetById(System.String)">
+            <summary>
+            It brings the details according to its id.
+            </summary>
+            <remarks>GridSettingses</remarks>
+            <return>GridSettingses List</return>
+            <response code="200"></response>  
+        </member>
+        <member name="M:WebAPI.Controllers.GridSettingsesController.Add(Business.Handlers.GridSettingses.Commands.CreateGridSettingsCommand)">
+            <summary>
+            Add GridSettings.
+            </summary>
+            <param name="createGridSettings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.GridSettingsesController.Update(Business.Handlers.GridSettingses.Commands.UpdateGridSettingsCommand)">
+            <summary>
+            Update GridSettings.
+            </summary>
+            <param name="updateGridSettings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.GridSettingsesController.Delete(Business.Handlers.GridSettingses.Commands.DeleteGridSettingsCommand)">
+            <summary>
+            Delete GridSettings.
+            </summary>
+            <param name="deleteGridSettings"></param>
             <returns></returns>
         </member>
         <member name="T:WebAPI.Controllers.GroupClaimsController">
@@ -614,8 +654,12 @@
             <summary>
             List Logs
             </summary>
-            <remarks>bla bla bla Logs</remarks>
-            <return>Logs List</return>
+            <response code="200"></response>
+        </member>
+        <member name="M:WebAPI.Controllers.LogsController.GetPagedList(Core.Utilities.Pagedlist.PagedListFilterModel)">
+            <summary>
+            PagedList Logs
+            </summary>
             <response code="200"></response>
         </member>
         <member name="T:WebAPI.Controllers.OperationClaimsController">

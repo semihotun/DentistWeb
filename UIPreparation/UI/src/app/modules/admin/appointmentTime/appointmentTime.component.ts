@@ -22,15 +22,10 @@ export class AppointmentTimeComponent implements AfterViewInit, OnInit {
 	@ViewChild(MatPaginator) paginator: MatPaginator;
 	@ViewChild(MatSort) sort: MatSort;
 	displayedColumns: string[] = ['id','hour','minutes', 'update','delete'];
-
 	appointmentTimeList:AppointmentTime[];
 	appointmentTime:AppointmentTime=new AppointmentTime();
-
 	appointmentTimeAddForm: FormGroup;
-
-
 	appointmentTimeId:number;
-
 	constructor(private appointmentTimeService:AppointmentTimeService,private alertifyService:AlertifyService,private formBuilder: FormBuilder, private authService:AuthService) { }
 
     ngAfterViewInit(): void {

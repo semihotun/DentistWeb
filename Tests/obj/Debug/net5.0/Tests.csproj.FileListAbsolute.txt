@@ -591,3 +591,4 @@ C:\Users\Semih\source\repos\DentistWeb\Tests\obj\Debug\net5.0\Tests.dll
 C:\Users\Semih\source\repos\DentistWeb\Tests\obj\Debug\net5.0\ref\Tests.dll
 C:\Users\Semih\source\repos\DentistWeb\Tests\obj\Debug\net5.0\Tests.pdb
 C:\Users\Semih\source\repos\DentistWeb\Tests\obj\Debug\net5.0\Tests.genruntimeconfig.cache
+C:\Users\Semih\source\repos\DentistWeb\Tests\bin\Debug\net5.0\System.Linq.Dynamic.Core.dll
