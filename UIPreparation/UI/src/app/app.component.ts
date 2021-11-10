@@ -25,21 +25,23 @@ export class AppComponent  {
   ) {
     translate.setDefaultLang("tr-TR");
     translate.use("tr-TR");
-    if (!this.authService.loggedIn()) {
-      this.authService.logOut();
-      this.router.navigateByUrl("/login");
-    }
+    // this.router.navigateByUrl("/login");
+    // if (!this.authService.loggedIn()) {
+    //   this.authService.logOut();
+    //   this.router.navigateByUrl("/login");
+    // }
 
-    this.subscription = router.events.subscribe((event) => {
-      if (event instanceof NavigationStart) {
-        browserRefresh = !router.navigated;
-      }
-  });
+    // this.subscription = router.events.subscribe((event) => {
+    //   if (event instanceof NavigationStart) {
+    //     browserRefresh = !router.navigated;
+    //   }
+    // });
+
   }
 
 
-  isLoggedIn(): boolean {
-    return this.authService.loggedIn();
-  }
+  // isLoggedIn(): boolean {
+  //   return this.authService.loggedIn();
+  // }
 
 }

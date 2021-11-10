@@ -5,7 +5,7 @@
         <div class="card">
           <div class="card-header card-header-danger">
             <h4 class="card-title">{{ "DoctorList" | translate }}</h4>
-            <a class="pull-right" routerLink="/doctorCreate">
+            <a class="pull-right" routerLink="/admin/doctorCreate">
               >
               <i style="color: white" title="{{ 'Add' | translate }}" class="far fa-plus-square fa-2x"></i></a>
           </div>
@@ -13,7 +13,7 @@
             <app-customgrid 
             [url]="'/doctors/getallpagedlist'" 
             [btnColumnOn]="true"
-            [editBtnUrl]="'#/doctorUpdate/'"
+            [editBtnUrl]="'/admin/doctorUpdate/'"
             [deleteBtnUrl]="'/doctors/'">
             </app-customgrid>
           </div>

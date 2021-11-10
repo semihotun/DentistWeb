@@ -48,8 +48,7 @@ export class AuthService {
         var propUserName = Object.keys(decode).filter(x => x.endsWith("/name"))[0];
         this.userName = decode[propUserName];
         this.sharedService.sendChangeUserNameEvent();
-
-        this.router.navigateByUrl("/dashboard");
+        this.router.navigateByUrl("/admin/dashboard");
       }
       else {
         this.alertifyService.warning(data.message);

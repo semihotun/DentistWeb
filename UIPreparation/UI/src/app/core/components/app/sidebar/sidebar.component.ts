@@ -14,21 +14,21 @@ declare interface RouteInfo {
     claim:string;
 }
 export const ADMINROUTES: RouteInfo[] = [
-  { path: '/user', title: 'Users', icon: 'how_to_reg', class: '', claim:"GetUsersQuery" },
-  { path: '/group', title: 'Groups', icon:'groups', class: '',claim:"GetGroupsQuery" },
-  { path: '/operationclaim', title: 'OperationClaim', icon:'local_police', class: '', claim:"GetOperationClaimsQuery"},
-  { path: '/language', title: 'Languages', icon:'language', class: '', claim:"GetLanguagesQuery" },
-  { path: '/translate', title: 'TranslateWords', icon: 'translate', class: '', claim: "GetTranslatesQuery" },
-  { path: '/log', title: 'Logs', icon: 'update', class: '', claim: "GetLogDtoQuery" }
+  { path: '/admin/user', title: 'Users', icon: 'how_to_reg', class: '', claim:"GetUsersQuery" },
+  { path: '/admin/group', title: 'Groups', icon:'groups', class: '',claim:"GetGroupsQuery" },
+  { path: '/admin/operationclaim', title: 'OperationClaim', icon:'local_police', class: '', claim:"GetOperationClaimsQuery"},
+  { path: '/admin/language', title: 'Languages', icon:'language', class: '', claim:"GetLanguagesQuery" },
+  { path: '/admin/translate', title: 'TranslateWords', icon: 'translate', class: '', claim: "GetTranslatesQuery" },
+  { path: '/admin/log', title: 'Logs', icon: 'update', class: '', claim: "GetLogDtoQuery" }
 ];
 
 export const USERROUTES: RouteInfo[] = [ 
-  { path: '/doctorType', title: 'DoctorType', icon: 'update', class: '', claim: "GetDoctorTypesQuery" },
-  { path: '/currency', title: 'Currency', icon: 'update', class: '', claim: "GetCurrenciesQuery" },
-  { path: '/appointmentTime', title: 'AppointmentTime', icon: 'update', class: '', claim: "GetAppointmentTimesQuery" },
-  { path: '/patient', title: 'Patient', icon: 'update', class: '', claim: "GetPatientsQuery" },
-  { path: '/disease', title: 'Disease', icon: 'update', class: '', claim: "GetDiseasesQuery" },
-  { path: '/doctor', title: 'Doctor', icon: 'update', class: '', claim: "GetDoctorsQuery" }
+  { path: '/admin/doctorType', title: 'DoctorType', icon: 'update', class: '', claim: "GetDoctorTypesQuery" },
+  { path: '/admin/currency', title: 'Currency', icon: 'update', class: '', claim: "GetCurrenciesQuery" },
+  { path: '/admin/appointmentTime', title: 'AppointmentTime', icon: 'update', class: '', claim: "GetAppointmentTimesQuery" },
+  { path: '/admin/patient', title: 'Patient', icon: 'update', class: '', claim: "GetPatientsQuery" },
+  { path: '/admin/disease', title: 'Disease', icon: 'update', class: '', claim: "GetDiseasesQuery" },
+  { path: '/admin/doctor', title: 'Doctor', icon: 'update', class: '', claim: "GetDoctorsQuery" }
 ];
 
 
@@ -66,7 +66,7 @@ export class SidebarComponent implements OnInit {
   ngOnDestroy() {
     if (!this.authService.loggedIn()) {
       this.authService.logOut();
-      this.router.navigateByUrl("/login");
+      this.router.navigateByUrl("/admin/login");
     }
   } 
  }

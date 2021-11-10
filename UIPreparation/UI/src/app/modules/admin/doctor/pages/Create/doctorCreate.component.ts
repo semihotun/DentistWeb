@@ -59,7 +59,7 @@ export class DoctorCreateComponent implements AfterViewInit, OnInit {
 
 		this.doctorService.addDoctor(this.doctor).subscribe(data => {
 			this.alertifyService.success(data);
-			this.router.navigate(["doctor"]);
+			this.router.navigate(["admin/doctor"]);
 		})
 	}
 	createDoctorAddForm() {
