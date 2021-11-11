@@ -69,5 +69,15 @@ export class SidebarComponent implements OnInit {
       this.router.navigateByUrl("/admin/login");
     }
   } 
+  menuToggleItemClick(){
+    $(".sidebar").css({"display":"none"});
+  }
+
+  sidebarLinkClick(url:string){
+    $(".sidebar").css({"display":"none"});
+    this.router.navigate([url]);
+
+  }
+  
  }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy, PopStateEvent } from '@angular/common';
 import 'rxjs/add/operator/filter';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
@@ -18,7 +18,7 @@ export class AdminLayoutComponent implements OnInit {
     private _router: Subscription;
     private lastPoppedUrl: string;
     private yScrollStack: number[] = [];
-
+    @ViewChild("menuToggleItem") prevBtn: ElementRef<HTMLElement>;
 
     constructor(public location: Location, private router: Router, private authService: AuthService ,public translate: TranslateService ) {
                
@@ -143,9 +143,11 @@ export class AdminLayoutComponent implements OnInit {
                     $sidebar_responsive.css('background-image', 'url("' + new_image + '")');
                 }
             });
+
         }
     }
     ngAfterViewInit() {
+
         this.runOnRouteChange();
     }
     isMaps(path) {
@@ -171,6 +173,10 @@ export class AdminLayoutComponent implements OnInit {
             bool = true;
         }
         return bool;
+    }
+
+    menuToggleItemClick():void{
+        $(".sidebar").css({"display":"block"});
     }
 
 }

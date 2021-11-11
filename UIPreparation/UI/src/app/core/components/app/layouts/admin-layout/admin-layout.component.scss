@@ -1,2 +1,35 @@
 tbody{height: 400px; overflow-y: scroll;display:block;}
 th { position: sticky; top: 0; }
+
+.headermobil{
+    display: none;
+}
+.sidebar{
+    z-index: 20;
+}
+@media only screen and (max-width: 600px) {
+    .sidebar {
+     display: none;
+    }
+    .main-panel {
+        width: 100%;
+    }
+    .headermobil{
+        height: 30px;
+        display:block;
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        z-index: 20;
+        background-color: white;
+    }
+    .bi-list{
+        border:0px;
+    }
+    .menuToggleItem{
+        border:0px;
+    }
+    .main-panel{
+        margin-top: 30px;
+    }
+  }

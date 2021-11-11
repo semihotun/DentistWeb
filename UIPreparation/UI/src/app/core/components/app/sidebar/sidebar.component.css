@@ -1,0 +1,13 @@
+
+#sidebarMenuToggleItem{
+    display: none;
+}
+@media only screen and (max-width: 600px) {
+    #sidebarMenuToggleItem{
+        display: block;
+    }
+}
+.logo a {
+    margin-left: auto;
+    margin-right: auto;
+}
