@@ -74,9 +74,10 @@ export class SidebarComponent implements OnInit {
   }
 
   sidebarLinkClick(url:string){
-    $(".sidebar").css({"display":"none"});
+    if($(window).width() < 600){
+      $(".sidebar").css({"display":"none"});  
+    }
     this.router.navigate([url]);
-
   }
   
  }

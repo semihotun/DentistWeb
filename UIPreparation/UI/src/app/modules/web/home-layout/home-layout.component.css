@@ -1,0 +1,27 @@
+.home-footer{
+    width: 100%;
+    color: black;
+}
+
+.home-footer-up{
+    padding: 60px;
+    background: #111111;
+    color: white;
+}
+.home-footer-up .title{
+    font-size: 21px;
+    color: white;
+}
+
+.home-footer-down{
+    padding: 20px;
+    color: #bbbbbb;
+    background-color: #222222;
+}
+
+.home-footer-up .social-icons a .bi {
+    margin: 30px;
+     width: 40px;
+     height: 40px;
+     color: white;
+}
