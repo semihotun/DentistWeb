@@ -18,6 +18,10 @@ export const environment = {
   getDatatableSettings:  {
     pagingType: 'full_numbers',
     pageLength: 2
+  },
+  getTemplateSetting:{
+    header:"0",
+    footer:"1"
   }
 
 };
