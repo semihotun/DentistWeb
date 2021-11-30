@@ -1,0 +1,23 @@
+.card .card-header .card-title {
+    margin-bottom: 3px !important;
+}
+
+
+.container{text-align:center;padding:16px;}
+.photo-input { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.photo-input + img {
+  padding:8px;
+  object-fit: contain;
+  width:100%;
+  cursor: pointer;
+  border: 2px solid #DDDDDD;
+}
+.photo-input:checked + img {
+  border-radius: 5px;
+  border: 2px solid #ef5350;
+}

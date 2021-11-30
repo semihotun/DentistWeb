@@ -28,7 +28,8 @@ export const USERROUTES: RouteInfo[] = [
   { path: '/admin/appointmentTime', title: 'AppointmentTime', icon: 'update', class: '', claim: "GetAppointmentTimesQuery" },
   { path: '/admin/patient', title: 'Patient', icon: 'update', class: '', claim: "GetPatientsQuery" },
   { path: '/admin/disease', title: 'Disease', icon: 'update', class: '', claim: "GetDiseasesQuery" },
-  { path: '/admin/doctor', title: 'Doctor', icon: 'update', class: '', claim: "GetDoctorsQuery" }
+  { path: '/admin/doctor', title: 'Doctor', icon: 'update', class: '', claim: "GetDoctorsQuery" },
+  { path: '/admin/template-setting', title: 'TemplateSetting', icon: 'update', class: '', claim: "GetDoctorsQuery" }
 ];
 
 

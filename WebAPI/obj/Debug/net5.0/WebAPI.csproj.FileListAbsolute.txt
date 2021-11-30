@@ -1,8 +1,10 @@
+C:\Users\Semih\source\repos\DentistWeb\WebAPI\bin\Debug\net5.0\Oracle.ManagedDataAccess.dll
 C:\Users\Semih\source\repos\DentistWeb\WebAPI\bin\Debug\net5.0\web.config
 C:\Users\Semih\source\repos\DentistWeb\WebAPI\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\Semih\source\repos\DentistWeb\WebAPI\bin\Debug\net5.0\appsettings.json
 C:\Users\Semih\source\repos\DentistWeb\WebAPI\bin\Debug\net5.0\appsettings.Production.json
 C:\Users\Semih\source\repos\DentistWeb\WebAPI\bin\Debug\net5.0\appsettings.Staging.json
+C:\Users\Semih\source\repos\DentistWeb\WebAPI\bin\Debug\net5.0\templateSetting.json
 C:\Users\Semih\source\repos\DentistWeb\WebAPI\bin\Debug\net5.0\WebAPI.exe
 C:\Users\Semih\source\repos\DentistWeb\WebAPI\bin\Debug\net5.0\WebAPI.deps.json
 C:\Users\Semih\source\repos\DentistWeb\WebAPI\bin\Debug\net5.0\WebAPI.runtimeconfig.json
@@ -81,7 +83,6 @@ C:\Users\Semih\source\repos\DentistWeb\WebAPI\bin\Debug\net5.0\Npgsql.dll
 C:\Users\Semih\source\repos\DentistWeb\WebAPI\bin\Debug\net5.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Users\Semih\source\repos\DentistWeb\WebAPI\bin\Debug\net5.0\Npgsql.EntityFrameworkCore.PostgreSQL.Design.dll
 C:\Users\Semih\source\repos\DentistWeb\WebAPI\bin\Debug\net5.0\Oracle.EntityFrameworkCore.dll
-C:\Users\Semih\source\repos\DentistWeb\WebAPI\bin\Debug\net5.0\Oracle.ManagedDataAccess.dll
 C:\Users\Semih\source\repos\DentistWeb\WebAPI\bin\Debug\net5.0\BouncyCastle.Crypto.dll
 C:\Users\Semih\source\repos\DentistWeb\WebAPI\bin\Debug\net5.0\RabbitMQ.Client.dll
 C:\Users\Semih\source\repos\DentistWeb\WebAPI\bin\Debug\net5.0\Refit.dll
@@ -113,6 +114,7 @@ C:\Users\Semih\source\repos\DentistWeb\WebAPI\bin\Debug\net5.0\System.Diagnostic
 C:\Users\Semih\source\repos\DentistWeb\WebAPI\bin\Debug\net5.0\System.DirectoryServices.dll
 C:\Users\Semih\source\repos\DentistWeb\WebAPI\bin\Debug\net5.0\System.DirectoryServices.Protocols.dll
 C:\Users\Semih\source\repos\DentistWeb\WebAPI\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Semih\source\repos\DentistWeb\WebAPI\bin\Debug\net5.0\System.Linq.Dynamic.Core.dll
 C:\Users\Semih\source\repos\DentistWeb\WebAPI\bin\Debug\net5.0\System.Private.ServiceModel.dll
 C:\Users\Semih\source\repos\DentistWeb\WebAPI\bin\Debug\net5.0\System.Runtime.Caching.dll
 C:\Users\Semih\source\repos\DentistWeb\WebAPI\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
@@ -222,4 +224,3 @@ C:\Users\Semih\source\repos\DentistWeb\WebAPI\obj\Debug\net5.0\ref\WebAPI.dll
 C:\Users\Semih\source\repos\DentistWeb\WebAPI\obj\Debug\net5.0\WebAPI.xml
 C:\Users\Semih\source\repos\DentistWeb\WebAPI\obj\Debug\net5.0\WebAPI.pdb
 C:\Users\Semih\source\repos\DentistWeb\WebAPI\obj\Debug\net5.0\WebAPI.genruntimeconfig.cache
-C:\Users\Semih\source\repos\DentistWeb\WebAPI\bin\Debug\net5.0\System.Linq.Dynamic.Core.dll

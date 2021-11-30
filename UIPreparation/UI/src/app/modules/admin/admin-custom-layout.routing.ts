@@ -9,6 +9,7 @@ import { DoctorUpdateComponent } from "./doctor/pages/Update/doctorUpdate.compon
 import { DoctorTypeComponent } from "./doctorType/doctorType.component";
 import { PatientComponent } from "./patient/patient.component";
 import { PatientOperationComponent } from "./patientOperation/patientOperation.component";
+import { TemplateSettingComponent } from "./template-setting/template-setting.component";
 
 
 
@@ -22,5 +23,6 @@ export const AdminCustomLayoutRoutes: Routes = [
     { path: 'doctor',     component: DoctorComponent,canActivate:[LoginGuard]},
     { path: 'doctorCreate',     component: DoctorCreateComponent,canActivate:[LoginGuard]},
     { path: 'doctorUpdate/:id',     component: DoctorUpdateComponent,canActivate:[LoginGuard]},
-    { path :'patientOperation' ,  component:PatientOperationComponent,canActivate:[LoginGuard]}
+    { path :'patientOperation' ,  component:PatientOperationComponent,canActivate:[LoginGuard]},
+    { path :'template-setting' ,  component:TemplateSettingComponent,canActivate:[LoginGuard]}
 ];

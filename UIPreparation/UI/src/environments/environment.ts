@@ -6,6 +6,7 @@
 export const environment = {
   production: false,
   getApiUrl: "https://localhost:44375/WebAPI/api",
+  assetsPath:"../assets",
   getDropDownSetting: {
     singleSelection: false,
     idField: 'id',
@@ -20,7 +21,7 @@ export const environment = {
     pageLength: 2
   },
   getTemplateSetting:{
-    header:"0",
+    header:"1",
     footer:"1"
   }
 

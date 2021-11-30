@@ -5,25 +5,27 @@ import { DynamicComponentItem } from 'app/core/utilities/dynamicComponent/dynami
 import { environment } from 'environments/environment';
 import { Header1Component } from './headers/header1/header1.component';
 import { Header2Component } from './headers/header2/header2.component';
+import { HeaderService } from './services/header.service';
 
 @Component({
   selector: 'app-header',
   template: ''
 })
 export class HeaderComponent implements OnInit {
-  constructor(private componentFactoryResolver:ComponentFactoryResolver,private viewContainerRef:ViewContainerRef) { }
+  constructor(
+    private componentFactoryResolver:ComponentFactoryResolver,
+    private viewContainerRef:ViewContainerRef,
+    private headerService :HeaderService
+    ) { }
+
   ads: DynamicComponentItem;
 
-  getHeaders() {
-    return [
-      new DynamicComponentItem(Header1Component,{}),
-      new DynamicComponentItem(Header2Component,{}),
-    ];
-  }
 
   ngOnInit() {
-    this.ads=this.getHeaders()[Number(environment.getTemplateSetting.header)];
-    loadComponent(this.ads,this.componentFactoryResolver,this.viewContainerRef);
+    this.headerService.getTeplateSettings().subscribe(data=>{
+      this.ads=this.headerService.getHeaders()[Number(data["header"])];
+      loadComponent(this.ads,this.componentFactoryResolver,this.viewContainerRef);
+    });
   }
 
 

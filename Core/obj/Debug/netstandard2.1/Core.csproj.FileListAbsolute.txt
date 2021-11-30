@@ -7,4 +7,3 @@ C:\Users\Semih\source\repos\DentistWeb\Core\obj\Debug\netstandard2.1\Core.Assemb
 C:\Users\Semih\source\repos\DentistWeb\Core\obj\Debug\netstandard2.1\Core.csproj.CoreCompileInputs.cache
 C:\Users\Semih\source\repos\DentistWeb\Core\obj\Debug\netstandard2.1\Core.dll
 C:\Users\Semih\source\repos\DentistWeb\Core\obj\Debug\netstandard2.1\Core.pdb
-C:\Users\Semih\source\repos\DentistWeb\Core\obj\Debug\netstandard2.1\Core.csprojAssemblyReference.cache

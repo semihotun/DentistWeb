@@ -1,0 +1,37 @@
+
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-danger">
+              <h4 class="card-title">{{ "Template Settings" | translate }}</h4>
+            
+            </div>
+            <div class="card-body mt-3">
+                <div class="form-group">
+                    <h5 class="col-md-6">Seçili Header</h5>
+                </div>
+
+                <form [formGroup]="templateSettingUpdateForm" (ngSubmit)="save()">
+                  <div class="form-group">
+                    <label class="col-md-6">
+                      <input class="photo-input" type="radio" placeholder="header" [value]="0" id="header" name="header" (change)="save()"
+                        formControlName="header">
+                      <img class="circle-corners" src="../assets/img/header/header1.png">
+                    </label>
+                
+                    <label class="col-md-6">
+                      <input class="photo-input" type="radio" placeholder="header" [value]="1" id="header" name="header" (change)="save()"
+                        formControlName="header">
+                      <img class="circle-corners" src="../assets/img/header/header2.png">
+                    </label>
+                  </div>
+                </form>
+        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

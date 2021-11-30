@@ -30,6 +30,7 @@ import { DoctorUpdateComponent } from "./doctor/pages/Update/doctorUpdate.compon
 import { DoctorTypeComponent } from "./doctorType/doctorType.component";
 import { PatientComponent } from "./patient/patient.component";
 import { PatientOperationComponent } from "./patientOperation/patientOperation.component";
+import { TemplateSettingComponent } from './template-setting/template-setting.component';
 
 
 export const modules = [
@@ -71,14 +72,16 @@ export const modules = [
     DoctorUpdateComponent,
     PatientOperationComponent,
     CustomGridComponent,
-    ChangeFilterNamePipe
+    ChangeFilterNamePipe,
+    TemplateSettingComponent
   ]
 
 
 @NgModule({
     imports: [modules],
     declarations: [
-        declarationComponent  
+        declarationComponent
+          
     ],
     exports:[CustomGridComponent,ChangeFilterNamePipe]
 })

@@ -35,7 +35,11 @@ export class PatientOperationComponent implements AfterViewInit, OnInit {
 
 	patientOperationId:number;
 
-	constructor(private patientOperationService:PatientOperationService, private diseaseService:DiseaseService,private alertifyService:AlertifyService,private formBuilder: FormBuilder, private authService:AuthService) { }
+	constructor(private patientOperationService:PatientOperationService,
+		 private diseaseService:DiseaseService,
+		 private alertifyService:AlertifyService,
+		 private formBuilder: FormBuilder, 
+		 private authService:AuthService) { }
 
     ngAfterViewInit(): void {
         this.getPatientOperationList();

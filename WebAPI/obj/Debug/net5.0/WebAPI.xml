@@ -799,6 +799,14 @@
             <param name="deletePatient"></param>
             <returns></returns>
         </member>
+        <member name="M:WebAPI.Controllers.TemplateSettingController.GetJson">
+            <summary>
+            templateSetting bilgisi
+            </summary>
+            <remarks>Get Json</remarks>
+            <return>templateSetting</return>
+            <response code="200"></response>  
+        </member>
         <member name="T:WebAPI.Controllers.TranslatesController">
             <summary>
             If controller methods will not be Authorize, [AllowAnonymous] is used.
