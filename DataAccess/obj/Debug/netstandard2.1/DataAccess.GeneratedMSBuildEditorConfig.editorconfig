@@ -1,2 +1,4 @@
 is_global = true
 build_property.RefitInternalNamespace = DataAccess
+build_property.RootNamespace = DataAccess
+build_property.ProjectDir = C:\Users\Semih\source\repos\DentistWeb\DataAccess\
