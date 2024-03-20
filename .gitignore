@@ -32,6 +32,9 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
+
+WebAPI/bin
+WebAPI/obj
 #Env File
 
 
